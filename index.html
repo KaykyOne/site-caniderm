@@ -6,26 +6,27 @@
 <title>Caniderm | Lançamento</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1F1F1F;
-    --muted:#6B7280;
-    --paper:#F9F5EE;
+    --muted:#7A7A7A;
+    --paper:#F5F6F8;
     --white:#FFFFFF;
-    --purple:#4E248F;
-    --purple-dark:#35136B;
-    --gold:#E8AB1A;
-    --gold-dark:#B97A08;
-    --line:#ECE5DA;
-    --shadow:0 22px 60px rgba(53,19,107,.16);
+    --purple:#313592;
+    --purple-dark:#25286E;
+    --purple-light:#5A5FC4;
+    --gold:#F1AD1E;
+    --gold-dark:#D9940F;
+    --line:#F5F6F8;
+    --shadow:0 22px 60px rgba(37,40,110,.16);
     --radius:8px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Montserrat", sans-serif;
+    font-family:"Inter", sans-serif;
     color:var(--ink);
     background:var(--paper);
     line-height:1.5;
@@ -35,7 +36,7 @@
   a{color:inherit;text-decoration:none}
   button,input{font:inherit}
   .wrap{width:min(100% - 28px, 1120px);margin-inline:auto}
-  .section{padding:62px 0}
+  .section{padding:62px 0;background:var(--white)}
   .section.white{background:var(--white)}
   .eyebrow{
     display:inline-flex;
@@ -43,7 +44,17 @@
     gap:10px;
     color:var(--purple);
     font-size:11px;
-    font-weight:900;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .eyebrow-yellow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--gold);
+    font-size:11px;
+    font-weight:700;
     letter-spacing:.14em;
     text-transform:uppercase;
   }
@@ -56,15 +67,15 @@
   h1,h2,h3{
     font-family:"Poppins", sans-serif;
     color:var(--purple-dark);
-    font-weight:900;
+    font-weight:700;
     line-height:1.03;
     letter-spacing:0;
   }
   h1{font-size:clamp(42px, 12vw, 82px)}
   h2{font-size:clamp(30px, 8vw, 52px)}
   h3{font-size:21px}
-  p{color:var(--muted);font-weight:600}
-  .lead{font-size:18px;color:#4f5560}
+  p{color:var(--muted);font-weight:500}
+  .lead{font-size:18px;color:var(--muted);font-weight:500}
   .btn{
     display:inline-flex;
     min-height:54px;
@@ -76,8 +87,8 @@
     padding:0 24px;
     background:var(--purple);
     color:var(--white);
-    box-shadow:0 14px 32px rgba(78,36,143,.24);
-    font-weight:900;
+    box-shadow:0 14px 32px rgba(49,53,146,.24);
+    font-weight:700;
     cursor:pointer;
     transition:transform .2s ease, background .2s ease;
   }
@@ -91,13 +102,13 @@
     align-items:end;
     padding:clamp(14px, 3svh, 22px) 0 clamp(22px, 5svh, 38px);
     overflow:hidden;
-    background:#211329 url("hero-dog.jpg") 63% center / cover no-repeat;
+    background:black url("hero-dog.jpg") 63% center / cover no-repeat;
   }
   .hero::after{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(20,13,26,.58);
+    background:rgba(27, 27, 27, 0.58);
   }
   .hero-inner{
     position:relative;
@@ -114,9 +125,9 @@
     max-width:660px;
   }
   .launch-label{
-    color:rgba(255,255,255,.86);
+    color:rgba(255,255,255,.88);
     font-size:12px;
-    font-weight:900;
+    font-weight:600;
     letter-spacing:.16em;
     text-transform:uppercase;
   }
@@ -131,11 +142,12 @@
     min-height:72px;
     display:grid;
     place-items:center;
-    border:1px solid rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.2);
     border-radius:var(--radius);
-    background:rgba(255,255,255,.09);
+    background:rgba(255,255,255,.1);
     backdrop-filter:blur(14px);
     text-align:center;
+    box-shadow:0 14px 34px rgba(0,0,0,.14);
   }
   .count-box strong{
     display:block;
@@ -149,7 +161,7 @@
     margin-top:6px;
     color:var(--gold);
     font-size:10px;
-    font-weight:900;
+    font-weight:700;
     letter-spacing:.08em;
     text-transform:uppercase;
   }
@@ -159,7 +171,20 @@
     font-size:clamp(30px, 10.5vw, 42px);
     text-wrap:balance;
   }
-  .hero-title span{color:var(--gold)}
+  .hero-title .protocol{
+    display:block;
+    color:var(--white);
+    font-weight:800;
+    text-transform:uppercase;
+    text-shadow:0 2px 18px rgba(0,0,0,.28);
+  }
+  .hero-title .rest{
+    display:block;
+    color:var(--gold);
+    font-weight:400;
+    margin-top:6px;
+    text-shadow:0 2px 18px rgba(0,0,0,.18);
+  }
   .hero .btn{
     width:100%;
     max-width:330px;
@@ -168,7 +193,7 @@
     color:var(--purple-dark);
     box-shadow:0 18px 40px rgba(0,0,0,.2);
   }
-  .hero .btn:hover{background:#F1BD31}
+  .hero .btn:hover{background:var(--white)}
 
   @media (max-width: 520px){
     .hero{
@@ -177,9 +202,11 @@
     }
     .launch-block{
       gap:clamp(10px, 2.1svh, 16px);
+      justify-items:center;
+      text-align:center;
     }
     .brand-logo{
-      width:clamp(108px, 30vw, 132px);
+      width:clamp(170px, 54vw, 230px);
     }
     .count-box{
       min-height:clamp(58px, 10.5svh, 72px);
@@ -240,7 +267,7 @@
     border-radius:var(--radius);
     background:var(--white);
     color:var(--purple-dark);
-    font-weight:900;
+    font-weight:800;
   }
   .benefit-list li::before{
     content:"\2713";
@@ -249,9 +276,9 @@
     display:grid;
     place-items:center;
     border-radius:50%;
-    background:rgba(232,171,26,.18);
+    background:rgba(241,173,30,.18);
     color:var(--gold-dark);
-    font-weight:900;
+    font-weight:700;
   }
 
   .why{
@@ -270,7 +297,7 @@
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(53,19,107,.42);
+    background:rgba(37,40,110,.42);
   }
   .why-copy{
     display:grid;
@@ -295,7 +322,7 @@
     border-radius:var(--radius);
     background:var(--white);
     border:1px solid var(--line);
-    box-shadow:0 12px 28px rgba(53,19,107,.07);
+    box-shadow:0 12px 28px rgba(37,40,110,.07);
   }
   .ingredient b{
     width:36px;
@@ -352,7 +379,7 @@
     background:transparent;
     color:var(--purple-dark);
     text-align:left;
-    font-weight:900;
+    font-weight:700;
     cursor:pointer;
   }
   .faq-item .plus{
@@ -361,7 +388,7 @@
     display:grid;
     place-items:center;
     border-radius:50%;
-    background:rgba(232,171,26,.18);
+    background:rgba(241,173,30,.18);
     color:var(--purple);
     transition:transform .22s ease;
   }
@@ -385,7 +412,7 @@
     gap:28px;
   }
   .final h2{color:var(--white)}
-  .final p{color:#DED5EE}
+  .final p{color:var(--white)}
   .signup{
     display:grid;
     gap:12px;
@@ -400,24 +427,159 @@
     background:rgba(255,255,255,.1);
     outline:0;
   }
-  .signup input::placeholder{color:#D8CDE8}
+  .signup input::placeholder{color:var(--paper)}
   .signup input:focus{border-color:var(--gold)}
   .signup .btn{
     color:var(--purple-dark);
     background:var(--gold);
-    box-shadow:0 16px 34px rgba(232,171,26,.22);
+    box-shadow:0 16px 34px rgba(241,173,30,.22);
   }
-  .signup .btn:hover{background:#F1BD31}
+  .signup .btn:hover{background:var(--gold-dark)}
   .status{
     display:none;
     color:var(--gold);
     font-size:14px;
-    font-weight:900;
+    font-weight:700;
   }
   .disclaimer{
     margin-top:28px;
-    color:#CFC3E6;
+    color:var(--paper);
     font-size:12px;
+  }
+  .site-footer{
+    margin-top:46px;
+    margin-bottom:-34px;
+    width:100%;
+    padding-bottom:34px;
+    padding-top:28px;
+    border-top:1px solid rgba(49,53,146,.14);
+    background:var(--white);
+    color:var(--ink);
+  }
+  .footer-content{
+    display:grid;
+    gap:24px;
+  }
+  .footer-brand{
+    display:grid;
+    gap:12px;
+    max-width:360px;
+  }
+  .footer-brand img{
+    width:150px;
+    padding:10px 12px;
+    border-radius:var(--radius);
+  }
+  .footer-brand p{
+    color:var(--muted);
+    font-size:14px;
+  }
+  .footer-block{
+    display:grid;
+    gap:10px;
+    align-content:start;
+  }
+  .footer-block strong{
+    color:var(--purple);
+    font-family:"Poppins", sans-serif;
+    font-size:14px;
+    font-weight:700;
+  }
+  .footer-block a,
+  .footer-block span{
+    color:var(--purple-dark);
+    font-size:14px;
+    font-weight:500;
+  }
+  .footer-block a:hover{color:var(--gold-dark)}
+  .footer-bottom{
+    margin-top:26px;
+    padding-top:18px;
+    border-top:1px solid rgba(49,53,146,.1);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .footer-bottom p{
+    color:var(--muted);
+    font-size:12px;
+  }
+  .floating-whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:30;
+    width:78px;
+    height:78px;
+    padding:5px;
+    border-radius:999px;
+    background:#25D366;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    transform-origin:center;
+    box-shadow:
+      0 18px 34px rgba(31,31,31,.18),
+      0 0 0 10px rgba(37,211,102,.16),
+      0 0 32px rgba(37,211,102,.56);
+    animation:whatsapp-float 3s ease-in-out infinite;
+    transition:transform .16s cubic-bezier(.2,1.5,.45,1), box-shadow .2s ease;
+  }
+  .floating-whatsapp::before{
+    content:"";
+    position:absolute;
+    inset:-14px;
+    z-index:-1;
+    border-radius:inherit;
+    background:radial-gradient(circle, rgba(37,211,102,.42), rgba(37,211,102,0) 68%);
+    animation:whatsapp-aura 2.2s ease-in-out infinite;
+  }
+  .floating-whatsapp::after{
+    content:"";
+    position:absolute;
+    inset:-35% auto -35% -80%;
+    width:42%;
+    transform:skewX(-22deg);
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.86), transparent);
+    opacity:0;
+  }
+  .floating-whatsapp:hover{
+    box-shadow:
+      0 22px 42px rgba(31,31,31,.2),
+      0 0 0 12px rgba(37,211,102,.18),
+      0 0 42px rgba(37,211,102,.68);
+  }
+  .floating-whatsapp:active{
+    transform:translateY(3px) scale(.82);
+  }
+  .floating-whatsapp:active::after{
+    animation:whatsapp-shine .48s ease-out;
+  }
+  .floating-whatsapp img{
+    width:68px;
+    height:68px;
+    object-fit:contain;
+    filter:drop-shadow(0 4px 0 rgba(0,0,0,.08));
+    transition:transform .16s cubic-bezier(.2,1.5,.45,1);
+  }
+  .floating-whatsapp:active img{
+    transform:rotate(-8deg) scale(.9);
+  }
+
+  @keyframes whatsapp-float{
+    0%,100%{transform:translateY(0) rotate(-2deg)}
+    50%{transform:translateY(-9px) rotate(2deg)}
+  }
+  @keyframes whatsapp-aura{
+    0%,100%{transform:scale(.92);opacity:.58}
+    50%{transform:scale(1.12);opacity:.95}
+  }
+  @keyframes whatsapp-shine{
+    0%{left:-80%;opacity:0}
+    18%{opacity:1}
+    100%{left:130%;opacity:0}
   }
 
   @media (min-width: 760px){
@@ -430,7 +592,7 @@
       padding:46px 0 76px;
       background-position:72% center;
     }
-    .brand-logo{width:164px}
+    .brand-logo{width:264px}
     .launch-block{gap:20px}
     .countdown{max-width:460px}
     .count-box{min-height:76px}
@@ -451,10 +613,22 @@
     .photo-row img{height:210px}
     .signup{grid-template-columns:1fr 1fr}
     .signup input[type="email"], .signup .btn, .status{grid-column:1 / -1}
+    .footer-content{grid-template-columns:1.3fr .8fr .9fr}
+  }
+
+  @media (max-width: 640px){
+    .footer-brand img{width:210px}
+    .floating-whatsapp{width:64px;height:64px;right:14px;bottom:14px}
+    .floating-whatsapp img{width:56px;height:56px}
   }
 
   @media (prefers-reduced-motion: reduce){
     *{scroll-behavior:auto!important;transition:none!important}
+    .floating-whatsapp,
+    .floating-whatsapp::before,
+    .floating-whatsapp::after{
+      animation:none!important;
+    }
   }
 </style>
 </head>
@@ -473,8 +647,8 @@
             <div class="count-box"><strong id="cd-seconds">00</strong><span>Seg</span></div>
           </div>
         </div>
-        <h1 class="hero-title" id="hero-title">Nutrição dermatológica de <span>alta performance.</span></h1>
-        <a class="btn" href="#cadastro">Quero ser avisado</a>
+        <h1 class="hero-title" id="hero-title"><span class="protocol">O protocolo</span><span class="rest">definitivo para uma pele e pelo mais saudáveis</span></h1>
+        <a class="btn" href="#cadastro">Lista de lançamento</a>
       </div>
     </div>
   </section>
@@ -488,12 +662,12 @@
       </div>
       <div>
         <span class="eyebrow">Benefícios</span>
-        <h2 id="benefits-title" style="margin:12px 0 22px">Cuidado visível na rotina do seu cão.</h2>
+        <h2 id="benefits-title" style="margin:12px 0 22px">Benefícios</h2>
         <ul class="benefit-list">
-          <li>Pele saudavel</li>
-          <li>Pelagem brilhante</li>
-          <li>Omega 3 e 6</li>
-          <li>Vitaminas essenciais</li>
+          <li>Cuidado além da estética</li>
+          <li>Previne dermatites</li>
+          <li>Pele e pelo saudáveis</li>
+          <li>Fórmula comprovada</li>
         </ul>
       </div>
     </div>
@@ -503,30 +677,10 @@
     <div class="wrap why">
       <div class="why-copy">
         <span class="eyebrow">Por que Caniderm?</span>
-        <h2 id="why-title">Formula pensada para pele, pelos e bem-estar.</h2>
-        <p class="lead">Caniderm combina nutrientes associados ao suporte da barreira cutânea e da pelagem, em uma rotina simples para tutores que querem cuidado diário sem complicação.</p>
+        <h2 id="why-title">O tratamento da pele vem antes da crise</h2>
+        <p class="lead">Caniderm é o único protocolo dermatológico do mercado que cuida da pele do seu pet de forma preventiva. O objetivo de nossa fórmula é evitar as dermatites e alergias, para você gastar menos tempo no veterinário e mais com o seu cão!</p>
       </div>
       <div class="why-photo" aria-label="Cachorro correndo feliz"></div>
-    </div>
-  </section>
-
-  <section class="section white" aria-labelledby="ingredients-title">
-    <div class="wrap ingredients">
-      <div>
-        <span class="eyebrow">Ingredientes principais</span>
-        <h2 id="ingredients-title" style="margin-top:12px">O essencial para uma pelagem mais bonita.</h2>
-      </div>
-      <div class="ingredient-grid">
-        <article class="ingredient"><b>1</b><strong>Biotina</strong><span>Apoio aos pelos e pele.</span></article>
-        <article class="ingredient"><b>2</b><strong>Zinco</strong><span>Suporte nutricional diário.</span></article>
-        <article class="ingredient"><b>3</b><strong>Omega</strong><span>Omega 3 e 6 na formula.</span></article>
-        <article class="ingredient"><b>4</b><strong>Vitaminas</strong><span>Vitamina E e ativos essenciais.</span></article>
-      </div>
-      <div class="photo-row">
-        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=900&q=88" alt="Cachorro feliz em casa">
-        <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=900&q=88" alt="Cachorro no sofa">
-        <img src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?auto=format&fit=crop&w=900&q=88" alt="Retrato de cachorro feliz">
-      </div>
     </div>
   </section>
 
@@ -539,15 +693,15 @@
       <div class="faq-list">
         <div class="faq-item">
           <button type="button">Quando será o lançamento? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>A abertura está prevista para 15 de julho de 2026, às 9h. Quem estiver na lista recebe o aviso primeiro.</p></div>
+          <div class="faq-answer"><p>O lançamento do Caniderm acontecerá em breve, e de modo online em nossa loja própria.</p></div>
         </div>
         <div class="faq-item">
-          <button type="button">Caniderm substitui veterinário? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>Não. É um suplemento alimentar coadjuvante. Feridas, coceira intensa ou piora rápida devem ser avaliadas por um médico veterinário.</p></div>
+          <button type="button">Onde vou poder adquirir? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>Você pode ter acesso antecipado ao Caniderm em nossa lista de pré-venda. Ou aguardar o lançamento de nossa loja oficial.</p></div>
         </div>
         <div class="faq-item">
           <button type="button">Como vou receber o aviso? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>Você recebe por WhatsApp e e-mail assim que o primeiro lote estiver disponível.</p></div>
+          <div class="faq-answer"><p>O aviso será enviado por e-mail e WhatsApp. Por isso, deixe aqui as suas informações de contato.</p></div>
         </div>
       </div>
     </div>
@@ -556,27 +710,52 @@
   <section class="final" id="cadastro" aria-labelledby="final-title">
     <div class="wrap final-grid">
       <div>
-        <span class="eyebrow">CTA final</span>
-        <h2 id="final-title" style="margin:12px 0 14px">Seu cao merece uma pele saudavel.</h2>
-        <p class="lead">Entre na lista para receber o lançamento do Caniderm e garantir prioridade no primeiro lote.</p>
+        <span class="eyebrow-yellow">Lista de lançamento</span>
+        <h2 id="final-title" style="margin:12px 0 14px">Receba o aviso antes da abertura da loja oficial.</h2>
+        <p class="lead">Entre na lista para receber o lançamento online do Caniderm por e-mail e WhatsApp.</p>
       </div>
       <form class="signup" id="launchForm">
         <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required>
         <input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" required>
         <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
-        <button class="btn" type="submit">Quero receber o lançamento</button>
-        <p class="status" id="formStatus">Cadastro recebido. Vamos avisar você no lançamento.</p>
+        <button class="btn" type="submit">Lista de lançamento</button>
+        <p class="status" id="formStatus">Cadastro recebido. Vamos avisar você por e-mail e WhatsApp.</p>
       </form>
     </div>
-    <div class="wrap">
-      <p class="disclaimer">Imagens ilustrativas. Suplemento alimentar coadjuvante. Não substitui avaliação veterinária.</p>
-    </div>
+    <footer class="site-footer" aria-label="Rodapé Caniderm">
+      <div class="wrap footer-content">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Caniderm">
+          <p>Protocolo dermatológico preventivo para apoiar pele saudável, pelagem bonita e bem-estar do seu cão.</p>
+        </div>
+        <div class="footer-block">
+          <strong>Contato</strong>
+          <a href="https://wa.me/5512991605488">WhatsApp: (12) 99160-5488</a>
+          <span>Aviso por e-mail e WhatsApp</span>
+          <span>Lançamento online em breve</span>
+        </div>
+        <div class="footer-block">
+          <strong>Caniderm</strong>
+          <a href="#cadastro">Lista de lançamento</a>
+          <span>Pré-venda antecipada</span>
+          <span>Loja oficial em breve</span>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <p>&copy; 2026 Caniderm. Todos os direitos reservados.</p>
+        <p>Suplemento alimentar coadjuvante. Não substitui avaliação veterinária.</p>
+      </div>
+    </footer>
   </section>
 </main>
 
+<a class="floating-whatsapp" href="https://wa.me/5512991605488" aria-label="Chamar Caniderm no WhatsApp">
+  <img src="icon-whatsapp.png" alt="">
+</a>
+
 <script>
   (function(){
-    var target = new Date("2026-07-15T09:00:00-03:00").getTime();
+    var target = Date.now() + (20 * 24 * 60 * 60 * 1000);
     var ids = {
       days: document.getElementById("cd-days"),
       hours: document.getElementById("cd-hours"),
