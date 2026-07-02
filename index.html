@@ -25,7 +25,10 @@
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:104px;
+  }
   body{
     font-family:"Montserrat", sans-serif;
     color:var(--ink);
@@ -38,6 +41,7 @@
   button,input,textarea{font:inherit}
   .wrap{width:min(1180px, calc(100% - 40px));margin-inline:auto}
   .section{padding:104px 0}
+  section[id]{scroll-margin-top:104px}
   .section.alt{background:var(--white)}
   .eyebrow{
     display:inline-flex;
@@ -171,7 +175,8 @@
   .hero-strip{
     position:relative;
     z-index:1;
-    margin-top:44px;
+    width:min(1180px, calc(100% - 40px));
+    margin:44px auto 0;
     display:flex;
     align-items:center;
     gap:18px;
@@ -227,7 +232,7 @@
     height:18px;
     flex:0 0 18px;
     margin-top:3px;
-    border-radius:var(--card-radius);
+    border-radius:50%;
     background:
       radial-gradient(circle at center, var(--leaf) 0 38%, transparent 40%),
       rgba(232,171,26,.16);
@@ -346,7 +351,7 @@
     height:54px;
     display:grid;
     place-items:center;
-    border-radius:var(--card-radius);
+    border-radius:50%;
     color:var(--forest);
     background:rgba(232,171,26,.16);
     font-family:"Poppins", sans-serif;
@@ -462,7 +467,7 @@
     height:42px;
     display:grid;
     place-items:center;
-    border-radius:var(--card-radius);
+    border-radius:50%;
     background:var(--forest);
     color:var(--white);
     font-family:"Poppins", sans-serif;
@@ -495,7 +500,7 @@
     height:28px;
     display:grid;
     place-items:center;
-    border-radius:var(--card-radius);
+    border-radius:50%;
     background:rgba(232,171,26,.16);
     transition:transform .22s ease;
   }
@@ -659,6 +664,7 @@
   @media (max-width: 640px){
     .wrap{width:min(100% - 28px, 1180px)}
     .section{padding:72px 0}
+    section[id]{scroll-margin-top:96px}
     .nav{padding:9px 10px 9px 14px}
     .nav .btn.secondary{display:none}
     .brand img{height:34px}
@@ -676,6 +682,9 @@
     .channel{display:grid}
     .countdown{grid-template-columns:repeat(2, 1fr)}
     .launch-form{grid-template-columns:1fr}
+    .hero-strip{display:none}
+    .floating-whatsapp{width:72px;height:72px;right:14px;bottom:14px}
+    .floating-whatsapp img{width:64px;height:64px}
   }
   @media (prefers-reduced-motion: reduce){
     *{scroll-behavior:auto!important;transition:none!important}
@@ -687,7 +696,6 @@
   <nav class="nav wrap" aria-label="Navegacao principal">
     <a class="brand" href="#inicio" aria-label="Caniderm">
       <img src="logo.png" alt="Caniderm">
-      <span>Caniderm</span>
     </a>
     <div class="nav-links" aria-label="Secoes">
       <a href="#beneficios">Beneficios</a>
