@@ -85,11 +85,11 @@
 
   .hero{
     position:relative;
-    min-height:100vh;
-    height:100vh;
+    min-height:100svh;
+    min-height:100dvh;
     display:grid;
     align-items:end;
-    padding:22px 0 38px;
+    padding:clamp(14px, 3svh, 22px) 0 clamp(22px, 5svh, 38px);
     overflow:hidden;
     background:#211329 url("hero-dog.jpg") 63% center / cover no-repeat;
   }
@@ -169,6 +169,41 @@
     box-shadow:0 18px 40px rgba(0,0,0,.2);
   }
   .hero .btn:hover{background:#F1BD31}
+
+  @media (max-width: 520px){
+    .hero{
+      align-items:center;
+      background-position:66% center;
+    }
+    .launch-block{
+      gap:clamp(10px, 2.1svh, 16px);
+    }
+    .brand-logo{
+      width:clamp(108px, 30vw, 132px);
+    }
+    .count-box{
+      min-height:clamp(58px, 10.5svh, 72px);
+    }
+    .hero-title{
+      font-size:clamp(28px, 9.2vw, 38px);
+    }
+    .hero .btn{
+      min-height:50px;
+    }
+  }
+
+  @media (max-width: 380px), (max-height: 700px){
+    .launch-label{
+      font-size:10px;
+    }
+    .count-box span{
+      margin-top:4px;
+      font-size:9px;
+    }
+    .hero-title{
+      font-size:clamp(26px, 8.6vw, 34px);
+    }
+  }
 
   .benefits{
     display:grid;
@@ -391,7 +426,6 @@
     .btn{width:max-content;min-width:240px}
     .hero{
       min-height:100vh;
-      height:100vh;
       align-items:center;
       padding:46px 0 76px;
       background-position:72% center;
