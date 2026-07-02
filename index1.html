@@ -129,15 +129,13 @@
     align-items:end;
     position:relative;
     overflow:hidden;
-    background:
-      linear-gradient(180deg, rgba(249,245,238,.18) 0%, rgba(249,245,238,.98) 88%),
-      url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=2200&q=88") center 34% / cover no-repeat;
+    background:#F9F5EE url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=2200&q=88") center 34% / cover no-repeat;
   }
   .hero::after{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(90deg, rgba(249,245,238,.96) 0%, rgba(249,245,238,.78) 48%, rgba(249,245,238,.08) 100%);
+    background:rgba(249,245,238,.72);
   }
   .hero-content{
     position:relative;
@@ -233,9 +231,7 @@
     flex:0 0 18px;
     margin-top:3px;
     border-radius:50%;
-    background:
-      radial-gradient(circle at center, var(--leaf) 0 38%, transparent 40%),
-      rgba(232,171,26,.16);
+    background:var(--leaf);
   }
 
   .symptoms{
@@ -266,7 +262,7 @@
     overflow:hidden;
     position:relative;
   }
-  .symptom::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 20%, rgba(0,0,0,.72) 100%)}
+  .symptom::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.48)}
   .symptom strong{position:relative;z-index:1;font-size:15px}
 
   .section-head{
@@ -550,7 +546,7 @@
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,.46) 100%);
+    background:rgba(0,0,0,.18);
   }
   .launch-panel{
     display:grid;
@@ -653,7 +649,7 @@
     .nav-links{display:none}
     .brand span{display:none}
     .hero{min-height:860px;background-position:62% center}
-    .hero::after{background:linear-gradient(180deg, rgba(249,245,238,.94) 0%, rgba(249,245,238,.7) 46%, rgba(249,245,238,.98) 100%)}
+    .hero::after{background:rgba(249,245,238,.82)}
     .hero-trust,.intro-grid,.symptoms .wrap,.process-grid,.testimonials,.faq-grid,.contact-grid{grid-template-columns:1fr}
     .benefit-grid,.plan-grid,.proof-grid{grid-template-columns:1fr 1fr}
     .symptom-grid,.diff-grid{grid-template-columns:1fr 1fr}

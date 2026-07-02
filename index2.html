@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caniderm | Lancamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F1F1F;
+    --muted:#6B7280;
+    --paper:#F9F5EE;
+    --white:#FFFFFF;
+    --purple:#4E248F;
+    --purple-dark:#35136B;
+    --gold:#E8AB1A;
+    --gold-dark:#B97A08;
+    --line:#ECE5DA;
+    --soft:#FFF9ED;
+    --shadow:0 22px 56px rgba(53,19,107,.14);
+    --radius:8px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Montserrat", sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.52;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  button,input{font:inherit}
+  .wrap{width:min(100% - 28px, 1120px);margin-inline:auto}
+  .section{padding:64px 0}
+  .section.white{background:var(--white)}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--purple);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--gold)}
+  h1,h2,h3{
+    font-family:"Poppins", sans-serif;
+    color:var(--purple-dark);
+    font-weight:900;
+    line-height:1.03;
+    letter-spacing:0;
+  }
+  h1{font-size:clamp(34px, 10.8vw, 48px)}
+  h2{font-size:clamp(30px, 8.2vw, 42px)}
+  h3{font-size:21px}
+  p{color:var(--muted);font-weight:600}
+  .lead{font-size:17px;color:#4f5560}
+  .btn{
+    min-height:54px;
+    width:100%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid transparent;
+    border-radius:999px;
+    padding:0 22px;
+    color:var(--white);
+    background:var(--purple);
+    box-shadow:0 14px 34px rgba(78,36,143,.24);
+    font-weight:900;
+    cursor:pointer;
+    transition:transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);background:var(--purple-dark)}
+  .btn.gold{background:var(--gold);color:var(--purple-dark);box-shadow:0 16px 34px rgba(232,171,26,.22)}
+  .btn.gold:hover{background:#F1BD31}
+  .btn.ghost{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.24);box-shadow:none}
+  .btn.ghost:hover{background:rgba(255,255,255,.2)}
+
+  .hero{
+    min-height:100svh;
+    display:grid;
+    align-items:center;
+    padding:54px 0;
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    background:var(--white);
+  }
+  .hero-content{
+    position:relative;
+    z-index:1;
+    display:grid;
+    gap:18px;
+    justify-items:center;
+    width:min(100% - 28px, 820px);
+    margin-inline:auto;
+    text-align:center;
+  }
+  .hero-brand{
+    width:154px;
+    margin-bottom:10px;
+    filter:drop-shadow(0 12px 26px rgba(53,19,107,.12));
+  }
+  .hero .eyebrow{color:var(--purple)}
+  .hero h1{color:var(--purple-dark)}
+  .hero h1{font-size:clamp(34px, 10vw, 48px)}
+  .hero h1,.hero .lead{max-width:680px}
+  .hero h1 span{color:var(--gold)}
+  .hero .lead{color:#4f5560}
+  .hero-actions{display:grid;gap:10px;margin-top:6px}
+  .hero-note{
+    color:var(--muted);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.02em;
+  }
+
+  .problem{
+    display:grid;
+    gap:24px;
+  }
+  .problem-photo{
+    min-height:320px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .problem-photo img{width:100%;height:100%;min-height:320px;object-fit:cover}
+  .copy-stack{display:grid;gap:18px}
+  .signal-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    list-style:none;
+  }
+  .signal-list li{
+    min-height:82px;
+    display:grid;
+    align-content:center;
+    gap:4px;
+    padding:14px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--white);
+    color:var(--purple-dark);
+    font-weight:900;
+  }
+  .signal-list span{color:var(--muted);font-size:12px;font-weight:700}
+
+  .benefit-grid{
+    display:grid;
+    gap:12px;
+    margin-top:24px;
+  }
+  .benefit{
+    display:grid;
+    gap:14px;
+    padding:20px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--white);
+    box-shadow:0 12px 30px rgba(53,19,107,.06);
+  }
+  .benefit b{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(232,171,26,.18);
+    color:var(--gold-dark);
+    font-family:"Poppins", sans-serif;
+  }
+  .benefit p{font-size:14px}
+
+  .formula{
+    background:var(--purple-dark);
+    color:var(--white);
+  }
+  .formula h2,.formula h3{color:var(--white)}
+  .formula p{color:#DED5EE}
+  .formula .eyebrow{color:var(--gold)}
+  .formula-grid{display:grid;gap:24px}
+  .ingredient-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .ingredient{
+    min-height:136px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:16px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.08);
+  }
+  .ingredient small{
+    color:var(--gold);
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .ingredient span{color:#EDE5FA;font-size:13px;font-weight:700}
+
+  .routine{
+    display:grid;
+    gap:24px;
+  }
+  .steps{display:grid;gap:12px}
+  .step{
+    display:grid;
+    grid-template-columns:42px 1fr;
+    gap:14px;
+    padding:18px;
+    border-radius:var(--radius);
+    background:var(--white);
+    border:1px solid var(--line);
+  }
+  .step b{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    color:var(--purple);
+    background:rgba(232,171,26,.18);
+    font-family:"Poppins", sans-serif;
+  }
+  .step p{margin-top:4px;font-size:14px}
+  .routine-photo{
+    min-height:360px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .routine-photo img{width:100%;height:100%;min-height:360px;object-fit:cover}
+
+  .proof{
+    padding:34px 0;
+    background:var(--soft);
+    border-block:1px solid rgba(78,36,143,.08);
+  }
+  .proof-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    overflow:hidden;
+    border-radius:var(--radius);
+    background:rgba(78,36,143,.1);
+  }
+  .proof-item{
+    padding:18px;
+    background:rgba(255,255,255,.76);
+  }
+  .proof-item strong{
+    display:block;
+    color:var(--purple);
+    font-family:"Poppins", sans-serif;
+    font-size:34px;
+    line-height:1;
+  }
+  .proof-item span{display:block;margin-top:6px;color:var(--muted);font-size:13px;font-weight:800}
+
+  .faq-list{border-top:1px solid var(--line);margin-top:24px}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item button{
+    width:100%;
+    min-height:66px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    border:0;
+    background:transparent;
+    color:var(--purple-dark);
+    text-align:left;
+    font-weight:900;
+    cursor:pointer;
+  }
+  .plus{
+    flex:0 0 30px;
+    width:30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(232,171,26,.18);
+    color:var(--purple);
+    transition:transform .22s ease;
+  }
+  .faq-item.open .plus{transform:rotate(45deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .25s ease}
+  .faq-answer p{padding:0 0 18px;font-size:14px}
+
+  .final{
+    padding:66px 0 30px;
+    color:var(--white);
+    background:var(--purple-dark);
+  }
+  .final h2{color:var(--white)}
+  .final p{color:#DED5EE}
+  .final .eyebrow{color:var(--gold)}
+  .final-grid{display:grid;gap:26px}
+  .countdown{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:8px;
+  }
+  .count-box{
+    min-height:76px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.08);
+    text-align:center;
+  }
+  .count-box strong{
+    display:block;
+    color:var(--gold);
+    font-family:"Poppins", sans-serif;
+    font-size:26px;
+    line-height:1;
+  }
+  .count-box span{
+    display:block;
+    margin-top:6px;
+    color:#E6DAF4;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .signup{
+    display:grid;
+    gap:12px;
+    padding:18px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.08);
+  }
+  .signup input{
+    width:100%;
+    min-height:54px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:var(--radius);
+    padding:0 16px;
+    color:var(--white);
+    background:rgba(255,255,255,.1);
+    outline:0;
+  }
+  .signup input::placeholder{color:#D8CDE8}
+  .signup input:focus{border-color:var(--gold)}
+  .status{
+    display:none;
+    color:var(--gold);
+    font-size:14px;
+    font-weight:900;
+  }
+  .footer-note{
+    margin-top:28px;
+    color:#CFC3E6;
+    font-size:12px;
+  }
+  @media (min-width: 760px){
+    .wrap{width:min(100% - 56px, 1120px)}
+    .section{padding:92px 0}
+    h1{font-size:clamp(56px, 5.7vw, 76px)}
+    h2{font-size:clamp(38px, 4.2vw, 52px)}
+    .btn{width:max-content;min-width:220px}
+    .hero{padding:76px 0}
+    .hero-content{gap:20px}
+    .hero-brand{width:184px;margin-bottom:14px}
+    .hero h1{font-size:clamp(48px, 4.8vw, 66px)}
+    .hero-actions{display:flex}
+    .problem,.routine,.formula-grid,.final-grid{grid-template-columns:1fr 1fr;align-items:center;gap:54px}
+    .benefit-grid{grid-template-columns:repeat(3, 1fr)}
+    .ingredient-grid{grid-template-columns:repeat(4, 1fr)}
+    .proof-grid{grid-template-columns:repeat(4, 1fr)}
+    .signup{grid-template-columns:1fr 1fr;padding:24px}
+    .signup input[type="email"], .signup .btn, .status{grid-column:1 / -1}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{scroll-behavior:auto!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="wrap hero-content">
+      <img class="hero-brand" src="logo.png" alt="Caniderm">
+      <span class="eyebrow">Suplemento dermatologico para caes</span>
+      <h1 id="hero-title">Pele saudavel. <span>Pelagem premium.</span></h1>
+      <p class="lead">Cuidado dermatologico diario para apoiar barreira cutanea, brilho dos pelos e bem-estar.</p>
+      <div class="hero-actions">
+        <a class="btn gold" href="#cadastro">Entrar na lista VIP</a>
+        <p class="hero-note">Lancamento previsto para 15 de julho de 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="beneficios" aria-labelledby="benefits-title">
+    <div class="wrap problem">
+      <div class="problem-photo">
+        <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1100&q=88" alt="Cachorro com pelagem bonita ao ar livre">
+      </div>
+      <div class="copy-stack">
+        <span class="eyebrow">Mais conforto na rotina</span>
+        <h2 id="benefits-title">Quando a pele incomoda, tudo muda.</h2>
+        <p class="lead">Coceira, lambedura, queda de pelo e pelagem opaca aparecem na rotina antes de parecerem um problema grande. Caniderm entra como suporte nutricional diario para ajudar o tutor a cuidar melhor.</p>
+        <ul class="signal-list">
+          <li>Coceira<span>apoio ao conforto</span></li>
+          <li>Pelos opacos<span>mais brilho visual</span></li>
+          <li>Pele seca<span>barreira cutanea</span></li>
+          <li>Queda<span>rotina consistente</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap benefit-grid">
+      <article class="benefit"><b>1</b><h3>Pele mais equilibrada</h3><p>Nutrientes associados ao suporte da barreira cutanea e ao bem-estar diario.</p></article>
+      <article class="benefit"><b>2</b><h3>Pelagem com brilho</h3><p>Ativos importantes para ajudar no aspecto saudavel dos pelos ao longo do uso.</p></article>
+      <article class="benefit"><b>3</b><h3>Uso sem complicacao</h3><p>Uma unidade ao dia para encaixar no momento da alimentacao e manter constancia.</p></article>
+    </div>
+  </section>
+
+  <section class="section formula" id="formula" aria-labelledby="formula-title">
+    <div class="wrap formula-grid">
+      <div class="copy-stack">
+        <span class="eyebrow">Formula Caniderm</span>
+        <h2 id="formula-title">O essencial para pele, pelos e imunidade.</h2>
+        <p class="lead">A composicao segue uma proposta direta: ativos conhecidos, comunicacao simples e foco no que o tutor realmente acompanha na rotina.</p>
+      </div>
+      <div class="ingredient-grid">
+        <article class="ingredient"><small>01</small><h3>Biotina</h3><span>Apoio aos pelos e pele.</span></article>
+        <article class="ingredient"><small>02</small><h3>Zinco</h3><span>Suporte nutricional diario.</span></article>
+        <article class="ingredient"><small>03</small><h3>Omega 3 e 6</h3><span>Auxilio a pele e brilho.</span></article>
+        <article class="ingredient"><small>04</small><h3>Vitamina E</h3><span>Ativo antioxidante.</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rotina" aria-labelledby="routine-title">
+    <div class="wrap routine">
+      <div class="copy-stack">
+        <span class="eyebrow">Como usar</span>
+        <h2 id="routine-title">Uma rotina que o tutor consegue manter.</h2>
+        <p class="lead">O meio termo aqui e simples: nao precisa de uma pagina enorme, mas tambem nao fica raso. O tutor entende o problema, ve a proposta e entra na lista.</p>
+        <div class="steps">
+          <article class="step"><b>1</b><div><h3>Inclua na alimentacao</h3><p>Use diariamente, de preferencia junto da rotina principal do cao.</p></div></article>
+          <article class="step"><b>2</b><div><h3>Acompanhe sinais reais</h3><p>Observe coceira, brilho, queda e textura da pele nas primeiras semanas.</p></div></article>
+          <article class="step"><b>3</b><div><h3>Mantenha constancia</h3><p>O cuidado dermatologico depende de repeticao e acompanhamento.</p></div></article>
+        </div>
+      </div>
+      <div class="routine-photo">
+        <img src="https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=1100&q=88" alt="Tutor fazendo carinho em cachorro">
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Dados rapidos">
+    <div class="wrap proof-grid">
+      <div class="proof-item"><strong>30</strong><span>unidades por pote</span></div>
+      <div class="proof-item"><strong>1</strong><span>unidade ao dia</span></div>
+      <div class="proof-item"><strong>15/07</strong><span>previsao de abertura</span></div>
+      <div class="proof-item"><strong>VIP</strong><span>prioridade no lote</span></div>
+    </div>
+  </section>
+
+  <section class="section white" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 id="faq-title" style="margin-top:12px">Antes do lancamento.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button">Quando sera o lancamento? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>A abertura esta prevista para 15 de julho de 2026, as 9h. Quem estiver na lista recebe o aviso primeiro.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button">Caniderm substitui veterinario? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>Nao. E um suplemento alimentar coadjuvante. Feridas, coceira intensa ou piora rapida devem ser avaliadas por um medico veterinario.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button">Como vou receber o aviso? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>Voce recebe por WhatsApp e e-mail assim que o primeiro lote estiver disponivel.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="cadastro" aria-labelledby="final-title">
+    <div class="wrap final-grid">
+      <div class="copy-stack">
+        <span class="eyebrow">Lista VIP Caniderm</span>
+        <h2 id="final-title">Receba prioridade no primeiro lote.</h2>
+        <p class="lead">Entre na lista para receber o lancamento, orientacao inicial e aviso de abertura antes do publico geral.</p>
+        <div class="countdown" aria-label="Tempo para o lancamento">
+          <div class="count-box"><strong id="cd-days">00</strong><span>Dias</span></div>
+          <div class="count-box"><strong id="cd-hours">00</strong><span>Horas</span></div>
+          <div class="count-box"><strong id="cd-minutes">00</strong><span>Min</span></div>
+          <div class="count-box"><strong id="cd-seconds">00</strong><span>Seg</span></div>
+        </div>
+      </div>
+      <form class="signup" id="launchForm">
+        <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" required>
+        <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
+        <button class="btn gold" type="submit">Quero receber o lancamento</button>
+        <p class="status" id="formStatus">Cadastro recebido. Vamos avisar voce no lancamento.</p>
+      </form>
+    </div>
+    <div class="wrap">
+      <p class="footer-note">Imagens ilustrativas. Suplemento alimentar coadjuvante. Nao substitui avaliacao veterinaria.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+  (function(){
+    var target = new Date("2026-07-15T09:00:00-03:00").getTime();
+    var ids = {
+      days: document.getElementById("cd-days"),
+      hours: document.getElementById("cd-hours"),
+      minutes: document.getElementById("cd-minutes"),
+      seconds: document.getElementById("cd-seconds")
+    };
+
+    function pad(value){ return String(value).padStart(2, "0"); }
+
+    function tick(){
+      var diff = Math.max(target - Date.now(), 0);
+      ids.days.textContent = pad(Math.floor(diff / 86400000));
+      ids.hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      ids.minutes.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      ids.seconds.textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  document.getElementById("launchForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    document.getElementById("formStatus").style.display = "block";
+    this.querySelector("button").textContent = "Cadastro confirmado";
+  });
+
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    var button = item.querySelector("button");
+    var answer = item.querySelector(".faq-answer");
+    button.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item").forEach(function(other){
+        other.classList.remove("open");
+        other.querySelector(".faq-answer").style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add("open");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+</body>
+</html>

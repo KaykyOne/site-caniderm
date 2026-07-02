@@ -91,10 +91,13 @@
     align-items:end;
     padding:22px 0 38px;
     overflow:hidden;
-    background:
-      linear-gradient(90deg, rgba(20,13,26,.82) 0%, rgba(20,13,26,.48) 54%, rgba(20,13,26,.2) 100%),
-      linear-gradient(180deg, rgba(20,13,26,.1) 0%, rgba(20,13,26,.38) 58%, rgba(249,245,238,.84) 100%),
-      url("hero-dog.jpg") 63% center / cover no-repeat;
+    background:#211329 url("hero-dog.jpg") 63% center / cover no-repeat;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(20,13,26,.58);
   }
   .hero-inner{
     position:relative;
@@ -232,7 +235,7 @@
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(180deg, transparent 34%, rgba(53,19,107,.74));
+    background:rgba(53,19,107,.42);
   }
   .why-copy{
     display:grid;
@@ -339,9 +342,7 @@
     position:relative;
     overflow:hidden;
     padding:72px 0 34px;
-    background:
-      linear-gradient(180deg, rgba(53,19,107,.9), rgba(53,19,107,.96)),
-      url("https://images.unsplash.com/photo-1608096299210-db7e38487075?auto=format&fit=crop&w=1400&q=88") center / cover no-repeat;
+    background:var(--purple-dark);
     color:var(--white);
   }
   .final-grid{
@@ -393,7 +394,7 @@
       height:100vh;
       align-items:center;
       padding:46px 0 76px;
-      background-position:center, center, 72% center;
+      background-position:72% center;
     }
     .brand-logo{width:164px}
     .launch-block{gap:20px}
