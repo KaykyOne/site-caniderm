@@ -6,1014 +6,538 @@
 <title>Caniderm | Lancamento</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1F1F1F;
     --muted:#6B7280;
-    --line:#ECE5DA;
     --paper:#F9F5EE;
-    --white:#ffffff;
-    --forest:#4E248F;
-    --forest-2:#35136B;
-    --leaf:#E8AB1A;
-    --amber:#E8AB1A;
+    --white:#FFFFFF;
+    --purple:#4E248F;
+    --purple-dark:#35136B;
+    --gold:#E8AB1A;
     --gold-dark:#B97A08;
-    --rose:#FFFFFF;
-    --shadow:0 18px 48px rgba(53,19,107,.12);
-    --card-radius:8px;
+    --line:#ECE5DA;
+    --shadow:0 22px 60px rgba(53,19,107,.16);
+    --radius:8px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  html{
-    scroll-behavior:smooth;
-    scroll-padding-top:104px;
-  }
+  html{scroll-behavior:smooth}
   body{
     font-family:"Montserrat", sans-serif;
     color:var(--ink);
     background:var(--paper);
-    line-height:1.55;
+    line-height:1.5;
     overflow-x:hidden;
   }
   img{display:block;max-width:100%;height:auto}
   a{color:inherit;text-decoration:none}
-  button,input,textarea{font:inherit}
-  .wrap{width:min(1180px, calc(100% - 40px));margin-inline:auto}
-  .section{padding:104px 0}
-  section[id]{scroll-margin-top:104px}
-  .section.alt{background:var(--white)}
+  button,input{font:inherit}
+  .wrap{width:min(100% - 28px, 1120px);margin-inline:auto}
+  .section{padding:62px 0}
+  .section.white{background:var(--white)}
   .eyebrow{
     display:inline-flex;
     align-items:center;
     gap:10px;
-    color:var(--forest);
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:.13em;
+    color:var(--purple);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.14em;
     text-transform:uppercase;
   }
   .eyebrow::before{
     content:"";
     width:26px;
-    height:1px;
-    background:var(--amber);
+    height:2px;
+    background:var(--gold);
   }
   h1,h2,h3{
     font-family:"Poppins", sans-serif;
-    font-weight:800;
-    line-height:1.04;
-    color:var(--forest-2);
+    color:var(--purple-dark);
+    font-weight:900;
+    line-height:1.03;
     letter-spacing:0;
   }
-  h1{font-size:clamp(42px, 6.5vw, 78px);max-width:860px}
-  h2{font-size:clamp(30px, 4.2vw, 52px)}
-  h3{font-size:22px}
-  .lead{
-    color:var(--muted);
-    font-size:clamp(17px, 1.7vw, 20px);
-    max-width:650px;
-  }
-
+  h1{font-size:clamp(42px, 12vw, 82px)}
+  h2{font-size:clamp(30px, 8vw, 52px)}
+  h3{font-size:21px}
+  p{color:var(--muted);font-weight:600}
+  .lead{font-size:18px;color:#4f5560}
   .btn{
     display:inline-flex;
+    min-height:54px;
+    width:100%;
     align-items:center;
     justify-content:center;
-    min-height:52px;
+    border:0;
+    border-radius:999px;
     padding:0 24px;
-    border-radius:999px;
-    font-weight:800;
-    border:1px solid transparent;
-    transition:transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    background:var(--purple);
+    color:var(--white);
+    box-shadow:0 14px 32px rgba(78,36,143,.24);
+    font-weight:900;
+    cursor:pointer;
+    transition:transform .2s ease, background .2s ease;
   }
-  .btn:hover{transform:translateY(-2px)}
-  .btn.primary{background:var(--forest);color:var(--white);box-shadow:0 12px 28px rgba(78,36,143,.22)}
-  .btn.primary:hover{background:var(--forest-2)}
-  .btn.secondary{background:rgba(255,255,255,.82);color:var(--forest);border-color:rgba(78,36,143,.16)}
-  .btn.secondary:hover{background:var(--white);border-color:var(--forest)}
-  .btn.light{background:var(--white);color:var(--forest)}
-  .btn.gold{background:var(--amber);color:var(--forest-2)}
-
-  header{
-    position:fixed;
-    inset:16px 0 auto;
-    z-index:20;
-    pointer-events:none;
-  }
-  .nav{
-    pointer-events:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:22px;
-    min-height:66px;
-    padding:10px 12px 10px 20px;
-    border:1px solid rgba(78,36,143,.12);
-    border-radius:999px;
-    background:rgba(249,245,238,.86);
-    backdrop-filter:blur(18px);
-    box-shadow:0 14px 34px rgba(53,19,107,.09);
-  }
-  .brand{display:flex;align-items:center;gap:12px;font-weight:900;color:var(--forest)}
-  .brand img{height:40px;width:auto}
-  .brand span{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
-  .nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:14px;font-weight:800}
-  .nav-links a:hover{color:var(--forest)}
-  .nav-actions{display:flex;align-items:center;gap:10px}
-  .nav .btn{min-height:44px;padding-inline:18px;font-size:14px}
+  .btn:hover{transform:translateY(-2px);background:var(--purple-dark)}
 
   .hero{
+    position:relative;
     min-height:100vh;
-    padding:118px 0 42px;
+    height:100vh;
     display:grid;
     align-items:end;
-    position:relative;
+    padding:22px 0 38px;
     overflow:hidden;
     background:
-      linear-gradient(180deg, rgba(249,245,238,.18) 0%, rgba(249,245,238,.98) 88%),
-      url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=2200&q=88") center 34% / cover no-repeat;
+      linear-gradient(90deg, rgba(20,13,26,.82) 0%, rgba(20,13,26,.48) 54%, rgba(20,13,26,.2) 100%),
+      linear-gradient(180deg, rgba(20,13,26,.1) 0%, rgba(20,13,26,.38) 58%, rgba(249,245,238,.84) 100%),
+      url("hero-dog.jpg") 63% center / cover no-repeat;
   }
-  .hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(90deg, rgba(249,245,238,.96) 0%, rgba(249,245,238,.78) 48%, rgba(249,245,238,.08) 100%);
-  }
-  .hero-content{
+  .hero-inner{
     position:relative;
     z-index:1;
-    display:grid;
-    gap:30px;
-    padding-bottom:28px;
-  }
-  .hero-title span{color:var(--amber)}
-  .hero-copy{display:grid;gap:22px;max-width:650px}
-  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-  .hero-trust{
-    display:grid;
-    grid-template-columns:repeat(3, minmax(0, 1fr));
-    gap:1px;
-    width:min(760px, 100%);
-    border-radius:var(--card-radius);
-    overflow:hidden;
-    box-shadow:var(--shadow);
-  }
-  .trust-item{
-    background:rgba(255,255,255,.9);
-    padding:22px;
-  }
-  .trust-item strong{
     display:block;
-    color:var(--forest);
-    font-size:26px;
-    line-height:1;
-    margin-bottom:8px;
-    font-family:"Poppins", sans-serif;
-    font-weight:800;
   }
-  .trust-item span{color:var(--muted);font-size:13px;font-weight:700}
-  .hero-strip{
-    position:relative;
-    z-index:1;
-    width:min(1180px, calc(100% - 40px));
-    margin:44px auto 0;
-    display:flex;
-    align-items:center;
-    gap:18px;
-    color:var(--forest);
-    font-weight:900;
-    letter-spacing:.08em;
-    text-transform:uppercase;
+  .brand-logo{
+    width:132px;
+    filter:drop-shadow(0 10px 22px rgba(0,0,0,.2));
+  }
+  .launch-block{
+    display:grid;
+    gap:16px;
+    max-width:660px;
+  }
+  .launch-label{
+    color:rgba(255,255,255,.86);
     font-size:12px;
-    opacity:.86;
-    white-space:nowrap;
-    overflow:hidden;
-  }
-  .hero-strip span{display:inline-flex;align-items:center;gap:18px}
-  .hero-strip span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber)}
-
-  .intro-grid{
-    display:grid;
-    grid-template-columns:.88fr 1.12fr;
-    gap:60px;
-    align-items:center;
-  }
-  .photo-stack{position:relative;min-height:610px}
-  .photo-stack img{
-    position:absolute;
-    object-fit:cover;
-    border-radius:var(--card-radius);
-    box-shadow:var(--shadow);
-  }
-  .photo-stack .a{width:72%;height:430px;left:0;top:0}
-  .photo-stack .b{width:55%;height:330px;right:0;bottom:0;border:10px solid var(--paper)}
-  .product-card{
-    position:absolute;
-    left:28px;
-    bottom:34px;
-    width:190px;
-    padding:18px;
-    border-radius:var(--card-radius);
-    background:var(--white);
-    box-shadow:0 18px 44px rgba(53,19,107,.14);
-  }
-  .product-card img{width:100%;height:auto}
-  .intro-copy{display:grid;gap:24px}
-  .check-list{display:grid;gap:14px;margin-top:4px}
-  .check-list li{
-    display:flex;
-    gap:12px;
-    color:var(--muted);
-    font-weight:650;
-  }
-  .check-list li::before{
-    content:"";
-    width:18px;
-    height:18px;
-    flex:0 0 18px;
-    margin-top:3px;
-    border-radius:50%;
-    background:
-      radial-gradient(circle at center, var(--leaf) 0 38%, transparent 40%),
-      rgba(232,171,26,.16);
-  }
-
-  .symptoms{
-    background:var(--forest-2);
-    color:var(--white);
-    padding:54px 0;
-  }
-  .symptoms .wrap{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    gap:36px;
-    align-items:center;
-  }
-  .symptoms h2{color:var(--white);font-size:clamp(26px, 3.4vw, 42px)}
-  .symptom-grid{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:12px;
-  }
-  .symptom{
-    min-height:154px;
-    display:flex;
-    align-items:end;
-    padding:18px;
-    border-radius:var(--card-radius);
-    background-size:cover;
-    background-position:center;
-    overflow:hidden;
-    position:relative;
-  }
-  .symptom::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 20%, rgba(0,0,0,.72) 100%)}
-  .symptom strong{position:relative;z-index:1;font-size:15px}
-
-  .section-head{
-    display:flex;
-    align-items:end;
-    justify-content:space-between;
-    gap:40px;
-    margin-bottom:46px;
-  }
-  .section-head .title{display:grid;gap:14px;max-width:680px}
-  .section-head p{max-width:420px;color:var(--muted);font-weight:600}
-  .benefit-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:18px;
-  }
-  .benefit{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--card-radius);
-    overflow:hidden;
-    box-shadow:0 10px 32px rgba(53,19,107,.07);
-  }
-  .benefit img{width:100%;height:250px;object-fit:cover}
-  .benefit-body{padding:26px;display:grid;gap:14px}
-  .benefit small{font-weight:900;color:var(--amber);letter-spacing:.12em;text-transform:uppercase}
-  .benefit p{color:var(--muted);font-weight:560}
-  .benefit .mini-link{font-weight:900;color:var(--forest)}
-
-  .proof-band{
-    padding:38px 0;
-    background:var(--rose);
-    border-block:1px solid rgba(78,36,143,.08);
-  }
-  .proof-grid{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:1px;
-    overflow:hidden;
-    border-radius:var(--card-radius);
-    background:rgba(78,36,143,.09);
-  }
-  .proof{
-    background:rgba(255,255,255,.62);
-    padding:28px;
-  }
-  .proof strong{
-    display:block;
-    font-family:"Poppins", sans-serif;
-    font-weight:800;
-    font-size:42px;
-    color:var(--forest);
-    line-height:1;
-    margin-bottom:8px;
-  }
-  .proof span{color:var(--muted);font-weight:800;font-size:14px}
-
-  .process-grid{
-    display:grid;
-    grid-template-columns:.95fr 1.05fr;
-    gap:48px;
-    align-items:start;
-  }
-  .process-copy{
-    position:sticky;
-    top:112px;
-    display:grid;
-    gap:22px;
-  }
-  .steps{display:grid;gap:14px}
-  .step{
-    display:grid;
-    grid-template-columns:54px 1fr;
-    gap:16px;
-    padding:22px;
-    border:1px solid var(--line);
-    border-radius:var(--card-radius);
-    background:var(--white);
-  }
-  .step b{
-    width:54px;
-    height:54px;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    color:var(--forest);
-    background:rgba(232,171,26,.16);
-    font-family:"Poppins", sans-serif;
-    font-weight:800;
-    font-size:22px;
-  }
-  .step p{color:var(--muted);font-weight:560;margin-top:6px}
-  .process-gallery{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-  }
-  .process-gallery img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
-    border-radius:var(--card-radius);
-  }
-  .process-gallery img:first-child{grid-column:1 / -1;height:390px}
-
-  .plans{
-    background:var(--white);
-    color:var(--ink);
-    position:relative;
-    overflow:hidden;
-  }
-  .plans h2,.plans h3{color:var(--forest-2)}
-  .plans .eyebrow{color:var(--gold-dark)}
-  .plans .section-head p{color:var(--muted)}
-  .plan-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:18px;
-  }
-  .plan{
-    border:1px solid var(--line);
-    border-radius:var(--card-radius);
-    background:var(--paper);
-    padding:26px;
-    display:grid;
-    gap:18px;
-  }
-  .plan.featured{
-    background:var(--white);
-    color:var(--ink);
-    transform:translateY(-10px);
-    box-shadow:0 28px 70px rgba(78,36,143,.16);
-  }
-  .plan.featured h3{color:var(--forest)}
-  .plan .tag{
-    justify-self:start;
-    border:1px solid currentColor;
-    border-radius:999px;
-    padding:6px 10px;
-    font-size:11px;
     font-weight:900;
-    letter-spacing:.1em;
+    letter-spacing:.16em;
     text-transform:uppercase;
-    opacity:.82;
-  }
-  .price{font-family:"Poppins", sans-serif;font-weight:800;font-size:40px;line-height:1;color:var(--gold-dark)}
-  .plan.featured .price{color:var(--forest)}
-  .plan ul{display:grid;gap:10px;color:inherit}
-  .plan li{color:inherit;opacity:.83;font-weight:650}
-  .plan img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:var(--card-radius);
-  }
-
-  .testimonials{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:42px;
-    align-items:center;
-  }
-  .testimonial-photo{
-    border-radius:var(--card-radius);
-    overflow:hidden;
-    min-height:560px;
-    box-shadow:var(--shadow);
-  }
-  .testimonial-photo img{width:100%;height:100%;min-height:560px;object-fit:cover}
-  .quote-list{display:grid;gap:16px}
-  .quote{
-    padding:26px;
-    border:1px solid var(--line);
-    border-radius:var(--card-radius);
-    background:var(--white);
-  }
-  .quote p{font-size:18px;color:var(--ink);font-weight:650}
-  .quote footer{margin-top:16px;color:var(--muted);font-size:14px;font-weight:800}
-  .stars{color:var(--amber);letter-spacing:2px;margin-bottom:12px}
-
-  .diff-grid{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:16px;
-  }
-  .diff{
-    padding:26px;
-    min-height:220px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    border-radius:var(--card-radius);
-    background:var(--white);
-    border:1px solid var(--line);
-  }
-  .diff b{
-    width:42px;
-    height:42px;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    background:var(--forest);
-    color:var(--white);
-    font-family:"Poppins", sans-serif;
-    font-weight:800;
-  }
-  .diff p{color:var(--muted);font-weight:650;margin-top:18px}
-
-  .faq-grid{
-    display:grid;
-    grid-template-columns:.75fr 1.25fr;
-    gap:48px;
-  }
-  .faq-list{border-top:1px solid var(--line)}
-  .faq-item{border-bottom:1px solid var(--line)}
-  .faq-item button{
-    width:100%;
-    border:0;
-    background:transparent;
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    padding:24px 0;
-    color:var(--forest);
-    cursor:pointer;
-    text-align:left;
-    font-weight:900;
-  }
-  .faq-item .plus{
-    flex:0 0 28px;
-    height:28px;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    background:rgba(232,171,26,.16);
-    transition:transform .22s ease;
-  }
-  .faq-item.open .plus{transform:rotate(45deg)}
-  .faq-answer{max-height:0;overflow:hidden;transition:max-height .25s ease}
-  .faq-answer p{padding:0 0 22px;color:var(--muted);max-width:720px;font-weight:560}
-
-  .contact{
-    background:var(--forest-2);
-    color:var(--white);
-    padding:96px 0 36px;
-  }
-  .contact h2{color:var(--white)}
-  .contact .eyebrow{color:var(--amber)}
-  .contact-grid{
-    display:grid;
-    grid-template-columns:.95fr 1.05fr;
-    gap:42px;
-    align-items:stretch;
-  }
-  .contact-card{
-    display:grid;
-    gap:24px;
-    align-content:center;
-  }
-  .contact-card p{color:#d3ddd5}
-  .channel-list{display:grid;gap:12px}
-  .channel{
-    display:flex;
-    justify-content:space-between;
-    gap:18px;
-    padding:18px;
-    border-radius:var(--card-radius);
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.1);
-    color:#e9eee9;
-    font-weight:800;
-  }
-  .contact-visual{
-    min-height:500px;
-    border-radius:var(--card-radius);
-    overflow:hidden;
-    position:relative;
-  }
-  .contact-visual img{width:100%;height:100%;object-fit:cover}
-  .contact-visual::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,.46) 100%);
-  }
-  .launch-panel{
-    display:grid;
-    gap:18px;
-    padding:24px;
-    border-radius:var(--card-radius);
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.12);
-  }
-  .launch-date{
-    color:#ddd1ee;
-    font-size:13px;
-    font-weight:700;
   }
   .countdown{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:10px;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:6px;
+    width:100%;
+    max-width:420px;
   }
   .count-box{
-    min-height:86px;
+    min-height:72px;
     display:grid;
     place-items:center;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.09);
+    backdrop-filter:blur(14px);
     text-align:center;
-    border-radius:var(--card-radius);
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.1);
   }
   .count-box strong{
     display:block;
+    color:var(--white);
     font-family:"Poppins", sans-serif;
-    font-size:30px;
+    font-size:clamp(22px, 7vw, 28px);
     line-height:1;
-    color:var(--amber);
   }
   .count-box span{
     display:block;
     margin-top:6px;
-    color:#ddd1ee;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:.1em;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.08em;
     text-transform:uppercase;
   }
-  .launch-form{
+  .hero-title{
+    max-width:680px;
+    color:var(--white);
+    font-size:clamp(30px, 10.5vw, 42px);
+    text-wrap:balance;
+  }
+  .hero-title span{color:var(--gold)}
+  .hero .btn{
+    width:100%;
+    max-width:330px;
+    min-width:0;
+    background:var(--gold);
+    color:var(--purple-dark);
+    box-shadow:0 18px 40px rgba(0,0,0,.2);
+  }
+  .hero .btn:hover{background:#F1BD31}
+
+  .benefits{
+    display:grid;
+    gap:24px;
+  }
+  .image-band{
     display:grid;
     grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .image-band img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+  .image-band img:first-child{
+    grid-column:1 / -1;
+    height:260px;
+  }
+  .benefit-list{
+    display:grid;
+    gap:12px;
+    list-style:none;
+  }
+  .benefit-list li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-height:54px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--white);
+    color:var(--purple-dark);
+    font-weight:900;
+  }
+  .benefit-list li::before{
+    content:"\2713";
+    width:26px;
+    height:26px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(232,171,26,.18);
+    color:var(--gold-dark);
+    font-weight:900;
+  }
+
+  .why{
+    display:grid;
+    gap:24px;
+  }
+  .why-photo{
+    position:relative;
+    min-height:360px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:url("https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=88") center / cover no-repeat;
+    box-shadow:var(--shadow);
+  }
+  .why-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, transparent 34%, rgba(53,19,107,.74));
+  }
+  .why-copy{
+    display:grid;
+    gap:16px;
+  }
+
+  .ingredients{
+    display:grid;
+    gap:22px;
+  }
+  .ingredient-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .ingredient{
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:16px;
+    border-radius:var(--radius);
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow:0 12px 28px rgba(53,19,107,.07);
+  }
+  .ingredient b{
+    width:36px;
+    height:36px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--purple);
+    color:var(--gold);
+    font-family:"Poppins", sans-serif;
+  }
+  .ingredient strong{
+    color:var(--purple-dark);
+    font-family:"Poppins", sans-serif;
+    font-size:20px;
+    line-height:1;
+  }
+  .ingredient span{
+    color:var(--muted);
+    font-size:13px;
+    font-weight:700;
+  }
+  .photo-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:14px;
+  }
+  .photo-row img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:var(--radius);
+  }
+
+  .faq{
+    display:grid;
+    gap:22px;
+  }
+  .faq-list{
+    border-top:1px solid var(--line);
+  }
+  .faq-item{
+    border-bottom:1px solid var(--line);
+  }
+  .faq-item button{
+    width:100%;
+    min-height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    border:0;
+    background:transparent;
+    color:var(--purple-dark);
+    text-align:left;
+    font-weight:900;
+    cursor:pointer;
+  }
+  .faq-item .plus{
+    flex:0 0 30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(232,171,26,.18);
+    color:var(--purple);
+    transition:transform .22s ease;
+  }
+  .faq-item.open .plus{transform:rotate(45deg)}
+  .faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+  }
+  .faq-answer p{padding:0 0 20px}
+
+  .final{
+    position:relative;
+    overflow:hidden;
+    padding:72px 0 34px;
+    background:
+      linear-gradient(180deg, rgba(53,19,107,.9), rgba(53,19,107,.96)),
+      url("https://images.unsplash.com/photo-1608096299210-db7e38487075?auto=format&fit=crop&w=1400&q=88") center / cover no-repeat;
+    color:var(--white);
+  }
+  .final-grid{
+    display:grid;
+    gap:28px;
+  }
+  .final h2{color:var(--white)}
+  .final p{color:#DED5EE}
+  .signup{
+    display:grid;
     gap:12px;
   }
-  .launch-form input{
+  .signup input{
     width:100%;
-    min-height:52px;
+    min-height:54px;
     border:1px solid rgba(255,255,255,.18);
-    border-radius:var(--card-radius);
+    border-radius:var(--radius);
     padding:0 16px;
     color:var(--white);
     background:rgba(255,255,255,.1);
     outline:0;
   }
-  .launch-form input::placeholder{color:#d8cde8}
-  .launch-form input:focus{border-color:var(--amber)}
-  .launch-form .full{grid-column:1 / -1}
-  .launch-form button{grid-column:1 / -1}
-  .form-status{
+  .signup input::placeholder{color:#D8CDE8}
+  .signup input:focus{border-color:var(--gold)}
+  .signup .btn{
+    color:var(--purple-dark);
+    background:var(--gold);
+    box-shadow:0 16px 34px rgba(232,171,26,.22);
+  }
+  .signup .btn:hover{background:#F1BD31}
+  .status{
     display:none;
-    color:var(--amber);
-    font-weight:800;
+    color:var(--gold);
     font-size:14px;
+    font-weight:900;
   }
-  .footer{
-    margin-top:78px;
-    padding-top:26px;
-    border-top:1px solid rgba(255,255,255,.1);
-    display:flex;
-    justify-content:space-between;
-    gap:18px;
-    color:#b6c1b8;
-    font-size:13px;
-    flex-wrap:wrap;
+  .disclaimer{
+    margin-top:28px;
+    color:#CFC3E6;
+    font-size:12px;
   }
-  .floating-whatsapp{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    z-index:30;
-    width:90px;
-    height:90px;
-    padding:5px;
-    border-radius:999px;
-    background:green;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .floating-whatsapp img{width:80px;height:80px;object-fit:contain}
 
-  @media (max-width: 980px){
-    header{inset:10px 0 auto}
-    .nav{border-radius:28px;align-items:flex-start}
-    .nav-links{display:none}
-    .brand span{display:none}
-    .hero{min-height:860px;background-position:62% center}
-    .hero::after{background:linear-gradient(180deg, rgba(249,245,238,.94) 0%, rgba(249,245,238,.7) 46%, rgba(249,245,238,.98) 100%)}
-    .hero-trust,.intro-grid,.symptoms .wrap,.process-grid,.testimonials,.faq-grid,.contact-grid{grid-template-columns:1fr}
-    .benefit-grid,.plan-grid,.proof-grid{grid-template-columns:1fr 1fr}
-    .symptom-grid,.diff-grid{grid-template-columns:1fr 1fr}
-    .section-head{display:grid}
-    .process-copy{position:static}
-    .plan.featured{transform:none}
+  @media (min-width: 760px){
+    .wrap{width:min(100% - 56px, 1120px)}
+    .section{padding:92px 0}
+    .btn{width:max-content;min-width:240px}
+    .hero{
+      min-height:100vh;
+      height:100vh;
+      align-items:center;
+      padding:46px 0 76px;
+      background-position:center, center, 72% center;
+    }
+    .brand-logo{width:164px}
+    .launch-block{gap:20px}
+    .countdown{max-width:460px}
+    .count-box{min-height:76px}
+    .hero-title{font-size:clamp(48px, 5.8vw, 70px)}
+    .hero .btn{
+      width:max-content;
+      min-width:230px;
+    }
+    .benefits,.why,.final-grid{
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:52px;
+    }
+    .image-band img{height:220px}
+    .image-band img:first-child{height:330px}
+    .ingredient-grid{grid-template-columns:repeat(4, 1fr)}
+    .photo-row{grid-template-columns:1fr 1fr 1fr}
+    .photo-row img{height:210px}
+    .signup{grid-template-columns:1fr 1fr}
+    .signup input[type="email"], .signup .btn, .status{grid-column:1 / -1}
   }
-  @media (max-width: 640px){
-    .wrap{width:min(100% - 28px, 1180px)}
-    .section{padding:72px 0}
-    section[id]{scroll-margin-top:96px}
-    .nav{padding:9px 10px 9px 14px}
-    .nav .btn.secondary{display:none}
-    .brand img{height:34px}
-    .hero{min-height:790px;padding-top:104px}
-    .hero-actions .btn{width:100%}
-    .hero-trust,.benefit-grid,.plan-grid,.proof-grid,.symptom-grid,.diff-grid{grid-template-columns:1fr}
-    .trust-item{padding:18px}
-    .photo-stack{min-height:520px}
-    .photo-stack .a{width:84%;height:330px}
-    .photo-stack .b{width:68%;height:240px}
-    .product-card{width:150px;left:16px;bottom:28px}
-    .process-gallery{grid-template-columns:1fr}
-    .process-gallery img,.process-gallery img:first-child{height:280px}
-    .testimonial-photo,.testimonial-photo img{min-height:360px}
-    .channel{display:grid}
-    .countdown{grid-template-columns:repeat(2, 1fr)}
-    .launch-form{grid-template-columns:1fr}
-    .hero-strip{display:none}
-    .floating-whatsapp{width:72px;height:72px;right:14px;bottom:14px}
-    .floating-whatsapp img{width:64px;height:64px}
-  }
+
   @media (prefers-reduced-motion: reduce){
     *{scroll-behavior:auto!important;transition:none!important}
   }
 </style>
 </head>
 <body>
-<header>
-  <nav class="nav wrap" aria-label="Navegacao principal">
-    <a class="brand" href="#inicio" aria-label="Caniderm">
-      <img src="logo.png" alt="Caniderm">
-    </a>
-    <div class="nav-links" aria-label="Secoes">
-      <a href="#beneficios">Beneficios</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#planos">Kits</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <div class="nav-actions">
-      <a class="btn secondary" href="#contato">Tirar duvidas</a>
-      <a class="btn primary" href="#contato">Entrar na lista</a>
-    </div>
-  </nav>
-</header>
-
 <main>
-  <section class="hero" id="inicio">
-    <div class="wrap hero-content">
-      <span class="eyebrow">Suplemento dermatologico para caes</span>
-      <h1 class="hero-title">Pele em equilibrio. <span>Cachorro feliz</span> de novo.</h1>
-      <div class="hero-copy">
-        <p class="lead">Caniderm apoia a saude da pele e da pelagem com nutrientes essenciais para caes com coceira, queda de pelo, ressecamento e pelagem opaca.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#contato">Entrar na lista VIP</a>
-          <a class="btn secondary" href="#beneficios">Ver beneficios</a>
-        </div>
-      </div>
-      <div class="hero-trust" aria-label="Destaques de confianca">
-        <div class="trust-item"><strong>30 dias</strong><span>para notar a pelagem mais bonita com uso continuo</span></div>
-        <div class="trust-item"><strong>1 ao dia</strong><span>rotina simples para tutores ocupados</span></div>
-        <div class="trust-item"><strong>Brasil</strong><span>entrega rapida e suporte humano pelo WhatsApp</span></div>
-      </div>
-    </div>
-    <div class="hero-strip" aria-hidden="true">
-      <span>Seu pet renovado</span><span>menos coceira</span><span>mais brilho</span><span>bem-estar visivel</span><span>pele protegida</span>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="intro-title">
-    <div class="wrap intro-grid">
-      <div class="photo-stack" aria-label="Cachorros felizes">
-        <img class="a" src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1100&q=88" alt="Cachorro feliz olhando para a camera">
-        <img class="b" src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=88" alt="Cachorro brincando ao ar livre">
-        <div class="product-card">
-          <img src="logo.png" alt="Caniderm">
-        </div>
-      </div>
-      <div class="intro-copy">
-        <span class="eyebrow">Cuidado de dentro para fora</span>
-        <h2 id="intro-title">Quando a pele melhora, o comportamento tambem muda.</h2>
-        <p class="lead">Coceira constante, lambedura nas patas e queda de pelo nao afetam so a aparencia. Afetam o sono, o humor e a rotina da casa. Caniderm foi pensado para apoiar a barreira natural da pele com um cuidado diario, pratico e consistente.</p>
-        <ul class="check-list">
-          <li>Formula com biotina, zinco, omegas, vitamina E e colageno hidrolisado.</li>
-          <li>Uso diario simples para encaixar na rotina de alimentacao.</li>
-          <li>Suporte para tutores que querem acompanhar a evolucao com mais seguranca.</li>
-        </ul>
-        <a class="btn primary" href="#contato">Quero ser avisado</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="symptoms" aria-labelledby="symptoms-title">
-    <div class="wrap">
-      <h2 id="symptoms-title">Seu cao sofre com algum desses sinais?</h2>
-      <div class="symptom-grid">
-        <div class="symptom" style="background-image:url('https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=800&q=86')"><strong>Coceira frequente</strong></div>
-        <div class="symptom" style="background-image:url('https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=86')"><strong>Pele ressecada</strong></div>
-        <div class="symptom" style="background-image:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=86')"><strong>Queda de pelo</strong></div>
-        <div class="symptom" style="background-image:url('https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=86')"><strong>Pelagem opaca</strong></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="beneficios">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="title">
-          <span class="eyebrow">Tudo que seu cao ganha</span>
-          <h2>Beneficios claros, sem exagero.</h2>
-        </div>
-        <p>Uma formula pensada para apoiar pele e pelagem em uma rotina simples, com comunicacao clara para tutores exigentes.</p>
-      </div>
-      <div class="benefit-grid">
-        <article class="benefit">
-          <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=900&q=88" alt="Cachorro com pelagem brilhante ao sol">
-          <div class="benefit-body">
-            <small>Conforto</small>
-            <h3>Ajuda a reduzir o desconforto da pele</h3>
-            <p>Nutricao de suporte para caes que se cocam, se lambem demais ou parecem inquietos por irritacao.</p>
-            <a class="mini-link" href="#contato">Entrar na lista</a>
-          </div>
-        </article>
-        <article class="benefit">
-          <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=900&q=88" alt="Cachorro pequeno feliz na grama">
-          <div class="benefit-body">
-            <small>Beleza</small>
-            <h3>Pelagem com mais brilho e vitalidade</h3>
-            <p>Ingredientes associados ao fortalecimento dos pelos e ao aspecto mais saudavel da pelagem.</p>
-            <a class="mini-link" href="#contato">Entrar na lista</a>
-          </div>
-        </article>
-        <article class="benefit">
-          <img src="https://images.unsplash.com/photo-1529472119196-cb724127a98e?auto=format&fit=crop&w=900&q=88" alt="Tutor abracando cachorro feliz">
-          <div class="benefit-body">
-            <small>Rotina</small>
-            <h3>Mais facil de manter todos os dias</h3>
-            <p>Uma unidade por dia, com acompanhamento e orientacao para manter a constancia do cuidado.</p>
-            <a class="mini-link" href="#contato">Tirar duvidas</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="proof-band" aria-label="Provas e garantias">
-    <div class="wrap proof-grid">
-      <div class="proof"><strong>6</strong><span>ativos selecionados para pele e pelos</span></div>
-      <div class="proof"><strong>3+</strong><span>meses de idade para iniciar, conforme orientacao</span></div>
-      <div class="proof"><strong>1</strong><span>unidade ao dia para simplificar a rotina</span></div>
-      <div class="proof"><strong>7d</strong><span>de suporte por semana via canais digitais</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="como-funciona">
-    <div class="wrap process-grid">
-      <div class="process-copy">
-        <span class="eyebrow">Como funciona</span>
-        <h2>Um cuidado simples, com acompanhamento visual.</h2>
-        <p class="lead">A proposta e sair do improviso. O tutor comeca, acompanha os sinais e mantem o uso para apoiar uma pele mais resistente e uma pelagem mais bonita.</p>
-        <a class="btn primary" href="#contato">Receber aviso do lancamento</a>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <b>1</b>
-          <div><h3>Comece com a dose diaria</h3><p>Inclua Caniderm na rotina depois da refeicao principal ou conforme a orientacao recebida.</p></div>
-        </div>
-        <div class="step">
-          <b>2</b>
-          <div><h3>Acompanhe sinais reais</h3><p>Observe coceira, lambedura, queda de pelo, brilho e textura da pele ao longo das semanas.</p></div>
-        </div>
-        <div class="step">
-          <b>3</b>
-          <div><h3>Mantenha a constancia</h3><p>Os melhores resultados dependem de uso continuo, rotina e suporte quando houver duvidas.</p></div>
-        </div>
-        <div class="process-gallery">
-          <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=88" alt="Cachorro feliz com lingua para fora">
-          <img src="https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=900&q=88" alt="Cachorro em momento de carinho com tutor">
-          <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=900&q=88" alt="Cachorro correndo feliz">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section plans" id="planos">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="title">
-          <span class="eyebrow">Kits de lancamento</span>
-          <h2>Escolha o kit que voce quer ser avisado primeiro.</h2>
-        </div>
-        <p>Os kits entram em venda no lancamento. Cadastre-se para receber prioridade, condicao inicial e orientacao de uso.</p>
-      </div>
-      <div class="plan-grid">
-        <article class="plan">
-          <span class="tag">Entrada</span>
-          <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=900&q=88" alt="Cachorro feliz em casa">
-          <h3>1 pote</h3>
-          <div class="price">Lista VIP</div>
-          <ul>
-            <li>Ideal para testar a rotina</li>
-            <li>Suporte via WhatsApp</li>
-            <li>Envio para todo o Brasil</li>
-          </ul>
-          <a class="btn light" href="#contato">Avisar sobre 1 pote</a>
-        </article>
-        <article class="plan featured">
-          <span class="tag">Mais vendido</span>
-          <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=900&q=88" alt="Cachorro alegre no sofa">
-          <h3>3 potes</h3>
-          <div class="price">Prioridade</div>
-          <ul>
-            <li>Melhor para acompanhar 90 dias</li>
-            <li>Frete gratis promocional</li>
-            <li>Suporte especializado incluso</li>
-          </ul>
-          <a class="btn primary" href="#contato">Entrar na prioridade</a>
-        </article>
-        <article class="plan">
-          <span class="tag">Tratamento completo</span>
-          <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=900&q=88" alt="Cachorro e tutor em casa">
-          <h3>6 potes</h3>
-          <div class="price">Primeiro lote</div>
-          <ul>
-            <li>Para rotina prolongada</li>
-            <li>Menor custo por unidade</li>
-            <li>Prioridade no atendimento</li>
-          </ul>
-          <a class="btn light" href="#contato">Avisar sobre 6 potes</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="depoimentos">
-    <div class="wrap testimonials">
-      <div class="testimonial-photo">
-        <img src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?auto=format&fit=crop&w=1200&q=88" alt="Cachorro feliz em retrato premium">
-      </div>
-      <div>
-        <span class="eyebrow">Tutores satisfeitos</span>
-        <h2 style="margin:14px 0 28px">O que muda quando o desconforto diminui.</h2>
-        <div class="quote-list">
-          <article class="quote">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>"A Nina parou de se cocar de madrugada. A casa ficou mais tranquila e ela voltou a brincar."</p>
-            <footer>Renata M. | tutora da Nina</footer>
-          </article>
-          <article class="quote">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>"O pelo do Thor ficou mais bonito e a queda reduziu bastante depois que mantivemos a rotina."</p>
-            <footer>Diego A. | tutor do Thor</footer>
-          </article>
-          <article class="quote">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p>"Gostei porque o atendimento explicou tudo sem empurrar produto. Foi simples de acompanhar."</p>
-            <footer>Camila S. | tutora da Mel</footer>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="title">
-          <span class="eyebrow">Diferenciais</span>
-          <h2>Por que escolher Caniderm.</h2>
-        </div>
-      </div>
-      <div class="diff-grid">
-        <div class="diff"><b>1</b><p>Formula focada em pele, pelos e barreira cutanea.</p></div>
-        <div class="diff"><b>2</b><p>Lista de interesse com atendimento humano antes da abertura.</p></div>
-        <div class="diff"><b>3</b><p>Kits pensados para manter constancia alem das primeiras semanas.</p></div>
-        <div class="diff"><b>4</b><p>Experiencia visual, simples e transparente para o tutor decidir.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="faq">
-    <div class="wrap faq-grid">
-      <div>
-        <span class="eyebrow">Duvidas frequentes</span>
-        <h2 style="margin-top:14px">Antes do lancamento.</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button type="button">Em quanto tempo vejo resultado? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>Os sinais variam de cao para cao. Muitos tutores acompanham melhora progressiva ao longo das primeiras semanas, com pelagem mais visivel entre 21 e 30 dias de uso continuo.</p></div>
-        </div>
-        <div class="faq-item">
-          <button type="button">A partir de qual idade posso oferecer? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>O uso costuma ser indicado a partir de 3 meses, respeitando porte, rotina e orientacao profissional quando o cao tiver condicoes especificas.</p></div>
-        </div>
-        <div class="faq-item">
-          <button type="button">Como devo administrar? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>Normalmente a rotina e de uma unidade ao dia, preferencialmente apos a refeicao principal ou conforme a indicacao do atendimento.</p></div>
-        </div>
-        <div class="faq-item">
-          <button type="button">Substitui consulta veterinaria? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>Nao. Caniderm e um suplemento de apoio. Coceira intensa, feridas, secrecoes ou piora rapida devem ser avaliadas por um medico veterinario.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contato">
-    <div class="wrap contact-grid">
-      <div class="contact-card">
-        <span class="eyebrow">Lancamento Caniderm</span>
-        <h2>Entre na lista para ser avisado primeiro.</h2>
-        <p class="lead">O primeiro lote sera liberado em breve. Cadastre-se para receber o aviso de abertura, prioridade nos kits e orientacao inicial para o seu cachorro.</p>
-        <div class="launch-panel" aria-label="Contador para o lancamento">
-          <p class="launch-date">Abertura prevista: 15 de julho de 2026, as 9h.</p>
-          <div class="countdown">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div class="launch-block">
+        <img class="brand-logo" src="logo.png" alt="Caniderm">
+        <div>
+          <p class="launch-label">Lancamento em</p>
+          <div class="countdown" aria-label="Tempo para o lancamento">
             <div class="count-box"><strong id="cd-days">00</strong><span>Dias</span></div>
             <div class="count-box"><strong id="cd-hours">00</strong><span>Horas</span></div>
             <div class="count-box"><strong id="cd-minutes">00</strong><span>Min</span></div>
             <div class="count-box"><strong id="cd-seconds">00</strong><span>Seg</span></div>
           </div>
-          <form class="launch-form" id="launchForm">
-            <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required>
-            <input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" required>
-            <input class="full" type="email" name="email" placeholder="E-mail para receber o aviso" autocomplete="email" required>
-            <button class="btn gold" type="submit">Cadastrar para o lancamento</button>
-            <p class="form-status" id="formStatus">Cadastro recebido. Vamos avisar voce no lancamento.</p>
-          </form>
         </div>
-        <div class="channel-list">
-          <a class="channel" href="https://wa.me/5511999999999"><span>WhatsApp</span><span>(11) 99999-9999</span></a>
-          <a class="channel" href="mailto:contato@caniderm.com.br"><span>E-mail</span><span>contato@caniderm.com.br</span></a>
-          <div class="channel"><span>Lista VIP</span><span>Prioridade no primeiro lote</span></div>
-        </div>
-      </div>
-      <div class="contact-visual">
-        <img src="https://images.unsplash.com/photo-1608096299210-db7e38487075?auto=format&fit=crop&w=1200&q=88" alt="Cachorro feliz recebendo carinho">
+        <h1 class="hero-title" id="hero-title">Nutricao dermatologica de <span>alta performance.</span></h1>
+        <a class="btn" href="#cadastro">Quero ser avisado</a>
       </div>
     </div>
-    <div class="wrap footer">
-      <span>&copy; 2026 Caniderm. Todos os direitos reservados.</span>
-      <span>Imagens ilustrativas. Suplemento nao substitui avaliacao veterinaria.</span>
+  </section>
+
+  <section class="section white" aria-labelledby="benefits-title">
+    <div class="wrap benefits">
+      <div class="image-band">
+        <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1000&q=88" alt="Cachorro com pelagem bonita ao ar livre">
+        <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=88" alt="Cachorro pequeno feliz na grama">
+        <img src="https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=800&q=88" alt="Tutor fazendo carinho em cachorro">
+      </div>
+      <div>
+        <span class="eyebrow">Beneficios</span>
+        <h2 id="benefits-title" style="margin:12px 0 22px">Cuidado visivel na rotina do seu cao.</h2>
+        <ul class="benefit-list">
+          <li>Pele saudavel</li>
+          <li>Pelagem brilhante</li>
+          <li>Omega 3 e 6</li>
+          <li>Vitaminas essenciais</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap why">
+      <div class="why-copy">
+        <span class="eyebrow">Por que Caniderm?</span>
+        <h2 id="why-title">Formula pensada para pele, pelos e bem-estar.</h2>
+        <p class="lead">Caniderm combina nutrientes associados ao suporte da barreira cutanea e da pelagem, em uma rotina simples para tutores que querem cuidado diario sem complicacao.</p>
+      </div>
+      <div class="why-photo" aria-label="Cachorro correndo feliz"></div>
+    </div>
+  </section>
+
+  <section class="section white" aria-labelledby="ingredients-title">
+    <div class="wrap ingredients">
+      <div>
+        <span class="eyebrow">Ingredientes principais</span>
+        <h2 id="ingredients-title" style="margin-top:12px">O essencial para uma pelagem mais bonita.</h2>
+      </div>
+      <div class="ingredient-grid">
+        <article class="ingredient"><b>1</b><strong>Biotina</strong><span>Apoio aos pelos e pele.</span></article>
+        <article class="ingredient"><b>2</b><strong>Zinco</strong><span>Suporte nutricional diario.</span></article>
+        <article class="ingredient"><b>3</b><strong>Omega</strong><span>Omega 3 e 6 na formula.</span></article>
+        <article class="ingredient"><b>4</b><strong>Vitaminas</strong><span>Vitamina E e ativos essenciais.</span></article>
+      </div>
+      <div class="photo-row">
+        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=900&q=88" alt="Cachorro feliz em casa">
+        <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=900&q=88" alt="Cachorro no sofa">
+        <img src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?auto=format&fit=crop&w=900&q=88" alt="Retrato de cachorro feliz">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <div>
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2 id="faq-title" style="margin-top:12px">Antes do lancamento.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button">Quando sera o lancamento? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>A abertura esta prevista para 15 de julho de 2026, as 9h. Quem estiver na lista recebe o aviso primeiro.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button">Caniderm substitui veterinario? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>Nao. E um suplemento alimentar coadjuvante. Feridas, coceira intensa ou piora rapida devem ser avaliadas por um medico veterinario.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button">Como vou receber o aviso? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>Voce recebe por WhatsApp e e-mail assim que o primeiro lote estiver disponivel.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="cadastro" aria-labelledby="final-title">
+    <div class="wrap final-grid">
+      <div>
+        <span class="eyebrow">CTA final</span>
+        <h2 id="final-title" style="margin:12px 0 14px">Seu cao merece uma pele saudavel.</h2>
+        <p class="lead">Entre na lista para receber o lancamento do Caniderm e garantir prioridade no primeiro lote.</p>
+      </div>
+      <form class="signup" id="launchForm">
+        <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" required>
+        <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
+        <button class="btn" type="submit">Quero receber o lancamento</button>
+        <p class="status" id="formStatus">Cadastro recebido. Vamos avisar voce no lancamento.</p>
+      </form>
+    </div>
+    <div class="wrap">
+      <p class="disclaimer">Imagens ilustrativas. Suplemento alimentar coadjuvante. Nao substitui avaliacao veterinaria.</p>
     </div>
   </section>
 </main>
-
-<a class="floating-whatsapp" href="https://wa.me/5511999999999" aria-label="Chamar Caniderm no WhatsApp">
-  <img src="icon-whatsapp.png" alt="">
-</a>
 
 <script>
   (function(){
@@ -1024,18 +548,17 @@
       minutes: document.getElementById("cd-minutes"),
       seconds: document.getElementById("cd-seconds")
     };
+
     function pad(value){ return String(value).padStart(2, "0"); }
+
     function tick(){
       var diff = Math.max(target - Date.now(), 0);
-      var days = Math.floor(diff / 86400000);
-      var hours = Math.floor((diff % 86400000) / 3600000);
-      var minutes = Math.floor((diff % 3600000) / 60000);
-      var seconds = Math.floor((diff % 60000) / 1000);
-      ids.days.textContent = pad(days);
-      ids.hours.textContent = pad(hours);
-      ids.minutes.textContent = pad(minutes);
-      ids.seconds.textContent = pad(seconds);
+      ids.days.textContent = pad(Math.floor(diff / 86400000));
+      ids.hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      ids.minutes.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      ids.seconds.textContent = pad(Math.floor((diff % 60000) / 1000));
     }
+
     tick();
     setInterval(tick, 1000);
   })();
@@ -1047,9 +570,9 @@
   });
 
   document.querySelectorAll(".faq-item").forEach(function(item){
-    var btn = item.querySelector("button");
+    var button = item.querySelector("button");
     var answer = item.querySelector(".faq-answer");
-    btn.addEventListener("click", function(){
+    button.addEventListener("click", function(){
       var isOpen = item.classList.contains("open");
       document.querySelectorAll(".faq-item").forEach(function(other){
         other.classList.remove("open");
