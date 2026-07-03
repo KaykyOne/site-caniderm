@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caniderm | Lançamento</title>
+<meta name="description" content="Entre na lista de lancamento do Caniderm, protocolo dermatologico preventivo para pele saudavel, pelagem bonita e bem-estar do seu cao.">
+<meta name="keywords" content="Caniderm, dermatologia veterinaria, pele saudavel, pelo saudavel, cachorro, dermatite canina, suplemento pet">
+<meta name="author" content="Caniderm">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#25286E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caniderm | Lista de lancamento">
+<meta property="og:description" content="Receba o aviso de lancamento do Caniderm por e-mail e WhatsApp.">
+<meta property="og:image" content="logo.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caniderm | Lista de lancamento">
+<meta name="twitter:description" content="Protocolo dermatologico preventivo para uma pele e pelo mais saudaveis.">
+<meta name="twitter:image" content="logo.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F1F1F;
+    --muted:#7A7A7A;
+    --paper:#F5F6F8;
+    --white:#FFFFFF;
+    --purple:#313592;
+    --purple-dark:#25286E;
+    --purple-light:#5A5FC4;
+    --gold:#F1AD1E;
+    --gold-dark:#D9940F;
+    --line:#F5F6F8;
+    --shadow:0 22px 60px rgba(37,40,110,.16);
+    --radius:8px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter", sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  button,input{font:inherit}
+  .wrap{width:min(100% - 28px, 1120px);margin-inline:auto}
+  .section{padding:62px 0;background:var(--white)}
+  .section.white{background:var(--white)}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--purple);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .eyebrow-yellow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--gold);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;
+    height:2px;
+    background:var(--gold);
+  }
+  h1,h2,h3{
+    font-family:"Poppins", sans-serif;
+    color:var(--purple-dark);
+    font-weight:700;
+    line-height:1.03;
+    letter-spacing:0;
+  }
+  h1{font-size:clamp(42px, 12vw, 82px)}
+  h2{font-size:clamp(30px, 8vw, 52px)}
+  h3{font-size:21px}
+  p{color:var(--muted);font-weight:500}
+  .lead{font-size:18px;color:var(--muted);font-weight:500}
+  .btn{
+    display:inline-flex;
+    min-height:54px;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    border-radius:999px;
+    padding:0 24px;
+    background:var(--purple);
+    color:var(--white);
+    box-shadow:0 14px 32px rgba(49,53,146,.24);
+    font-weight:700;
+    cursor:pointer;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);background:var(--purple-dark)}
+
+  .hero{
+    position:relative;
+    min-height:100svh;
+    min-height:100dvh;
+    display:grid;
+    align-items:end;
+    padding:clamp(14px, 3svh, 22px) 0 clamp(22px, 5svh, 38px);
+    overflow:hidden;
+    background:black url("hero-dog.jpg") 63% center / cover no-repeat;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(27, 27, 27, 0.58);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:1;
+    display:block;
+  }
+  .brand-logo{
+    width:132px;
+    filter:drop-shadow(0 10px 22px rgba(0,0,0,.2));
+  }
+  .launch-block{
+    display:grid;
+    gap:16px;
+    max-width:660px;
+  }
+  .launch-label{
+    color:rgba(255,255,255,.88);
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .countdown{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:6px;
+    width:100%;
+    max-width:420px;
+  }
+  .count-box{
+    min-height:72px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(14px);
+    text-align:center;
+    box-shadow:0 14px 34px rgba(0,0,0,.14);
+  }
+  .count-box strong{
+    display:block;
+    color:var(--white);
+    font-family:"Poppins", sans-serif;
+    font-size:clamp(22px, 7vw, 28px);
+    line-height:1;
+  }
+  .count-box span{
+    display:block;
+    margin-top:6px;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .hero-title{
+    max-width:680px;
+    color:var(--white);
+    font-size:clamp(30px, 10.5vw, 42px);
+    text-wrap:balance;
+  }
+  .hero-title .protocol{
+    display:block;
+    color:var(--white);
+    font-weight:800;
+    text-transform:uppercase;
+    text-shadow:0 2px 18px rgba(0,0,0,.28);
+  }
+  .hero-title .rest{
+    display:block;
+    color:var(--gold);
+    font-weight:400;
+    margin-top:6px;
+    text-shadow:0 2px 18px rgba(0,0,0,.18);
+  }
+  .hero .btn{
+    width:100%;
+    max-width:330px;
+    min-width:0;
+    background:var(--gold);
+    color:var(--purple-dark);
+    box-shadow:0 18px 40px rgba(0,0,0,.2);
+  }
+  .hero .btn:hover{background:var(--white)}
+
+  @media (max-width: 520px){
+    .hero{
+      align-items:center;
+      background-position:66% center;
+    }
+    .launch-block{
+      gap:clamp(10px, 2.1svh, 16px);
+      justify-items:center;
+      text-align:center;
+    }
+    .brand-logo{
+      width:clamp(170px, 54vw, 230px);
+    }
+    .count-box{
+      min-height:clamp(58px, 10.5svh, 72px);
+    }
+    .hero-title{
+      font-size:clamp(28px, 9.2vw, 38px);
+    }
+    .hero .btn{
+      min-height:50px;
+    }
+  }
+
+  @media (max-width: 380px), (max-height: 700px){
+    .launch-label{
+      font-size:10px;
+    }
+    .count-box span{
+      margin-top:4px;
+      font-size:9px;
+    }
+    .hero-title{
+      font-size:clamp(26px, 8.6vw, 34px);
+    }
+  }
+
+  .benefits{
+    display:grid;
+    gap:24px;
+  }
+  
+.image-band{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+.hero-banner{
+width:100%;
+aspect-ratio:16/7;
+min-height:220px;
+max-height:560px;
+overflow:hidden;
+border-radius:var(--radius);
+}
+.hero-banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+.slider{
+position:relative;
+width:100%;
+aspect-ratio:16/5;
+min-height:180px;
+max-height:420px;
+overflow:hidden;
+border-radius:var(--radius);
+background:#f5f5f5;
+}
+.slides,.slide{width:100%;height:100%}
+.slide{display:none}
+.slide.active{display:block}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slider-btn{
+position:absolute;top:50%;transform:translateY(-50%);
+width:44px;height:44px;border:none;border-radius:50%;
+background:rgba(255,255,255,.9);color:var(--purple);
+font-size:20px;cursor:pointer;z-index:5}
+.prev{left:16px}.next{right:16px}
+.slider-dots{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.5)}
+.dot.active{background:#fff}
+
+  .benefit-list{
+    display:grid;
+    gap:12px;
+    list-style:none;
+  }
+  .benefit-list li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-height:54px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--white);
+    color:var(--purple-dark);
+    font-weight:800;
+  }
+  .benefit-list li::before{
+    content:"\2713";
+    width:26px;
+    height:26px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(241,173,30,.18);
+    color:var(--gold-dark);
+    font-weight:700;
+  }
+
+  .why{
+    display:grid;
+    gap:24px;
+  }
+  .why-photo{
+    position:relative;
+    min-height:360px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:url("https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=1200&q=88") center / cover no-repeat;
+    box-shadow:var(--shadow);
+  }
+  .why-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(37,40,110,.42);
+  }
+  .why-copy{
+    display:grid;
+    gap:16px;
+  }
+
+  .ingredients{
+    display:grid;
+    gap:22px;
+  }
+  .ingredient-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .ingredient{
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:16px;
+    border-radius:var(--radius);
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow:0 12px 28px rgba(37,40,110,.07);
+  }
+  .ingredient b{
+    width:36px;
+    height:36px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--purple);
+    color:var(--gold);
+    font-family:"Poppins", sans-serif;
+  }
+  .ingredient strong{
+    color:var(--purple-dark);
+    font-family:"Poppins", sans-serif;
+    font-size:20px;
+    line-height:1;
+  }
+  .ingredient span{
+    color:var(--muted);
+    font-size:13px;
+    font-weight:700;
+  }
+  .photo-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:14px;
+  }
+  .photo-row img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:var(--radius);
+  }
+
+  .faq{
+    display:grid;
+    gap:22px;
+  }
+  .faq-list{
+    border-top:1px solid var(--line);
+  }
+  .faq-item{
+    border-bottom:1px solid var(--line);
+  }
+  .faq-item button{
+    width:100%;
+    min-height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    border:0;
+    background:transparent;
+    color:var(--purple-dark);
+    text-align:left;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .faq-item .plus{
+    flex:0 0 30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(241,173,30,.18);
+    color:var(--purple);
+    transition:transform .22s ease;
+  }
+  .faq-item.open .plus{transform:rotate(45deg)}
+  .faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+  }
+  .faq-answer p{padding:0 0 20px}
+
+  .final{
+    position:relative;
+    overflow:hidden;
+    padding:72px 0 34px;
+    background:var(--purple-dark);
+    color:var(--white);
+  }
+  .final-grid{
+    display:grid;
+    gap:28px;
+  }
+  .final h2{color:var(--white)}
+  .final p{color:var(--white)}
+  .signup{
+    display:grid;
+    gap:12px;
+  }
+  .signup input{
+    width:100%;
+    min-height:54px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:var(--radius);
+    padding:0 16px;
+    color:var(--white);
+    background:rgba(255,255,255,.1);
+    outline:0;
+  }
+  .signup input::placeholder{color:var(--paper)}
+  .signup input:focus{border-color:var(--gold)}
+  .signup .btn{
+    color:var(--purple-dark);
+    background:var(--gold);
+    box-shadow:0 16px 34px rgba(241,173,30,.22);
+  }
+  .signup .btn:hover{background:var(--gold-dark)}
+  .status{
+    display:none;
+    color:var(--gold);
+    font-size:14px;
+    font-weight:700;
+  }
+  .status.error{
+    color:#FFFFFF;
+  }
+  .disclaimer{
+    margin-top:28px;
+    color:var(--paper);
+    font-size:12px;
+  }
+  .site-footer{
+    margin-top:46px;
+    margin-bottom:-34px;
+    width:100%;
+    padding-bottom:34px;
+    padding-top:28px;
+    border-top:1px solid rgba(49,53,146,.14);
+    background:var(--white);
+    color:var(--ink);
+  }
+  .footer-content{
+    display:grid;
+    gap:24px;
+  }
+  .footer-brand{
+    display:grid;
+    gap:12px;
+    max-width:360px;
+  }
+  .footer-brand img{
+    width:150px;
+    padding:10px 12px;
+    border-radius:var(--radius);
+  }
+  .footer-brand p{
+    color:var(--muted);
+    font-size:14px;
+  }
+  .footer-block{
+    display:grid;
+    gap:10px;
+    align-content:start;
+  }
+  .footer-block strong{
+    color:var(--purple);
+    font-family:"Poppins", sans-serif;
+    font-size:14px;
+    font-weight:700;
+  }
+  .footer-block a,
+  .footer-block span{
+    color:var(--purple-dark);
+    font-size:14px;
+    font-weight:500;
+  }
+  .footer-block a:hover{color:var(--gold-dark)}
+  .footer-bottom{
+    margin-top:26px;
+    padding-top:18px;
+    border-top:1px solid rgba(49,53,146,.1);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .footer-bottom p{
+    color:var(--muted);
+    font-size:12px;
+  }
+  .floating-whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:30;
+    width:78px;
+    height:78px;
+    padding:5px;
+    border-radius:999px;
+    background:#25D366;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    transform-origin:center;
+    box-shadow:
+      0 18px 34px rgba(31,31,31,.18),
+      0 0 0 10px rgba(37,211,102,.16),
+      0 0 32px rgba(37,211,102,.56);
+    animation:whatsapp-float 3s ease-in-out infinite;
+    transition:transform .16s cubic-bezier(.2,1.5,.45,1), box-shadow .2s ease;
+  }
+  .floating-whatsapp::before{
+    content:"";
+    position:absolute;
+    inset:-14px;
+    z-index:-1;
+    border-radius:inherit;
+    background:radial-gradient(circle, rgba(37,211,102,.42), rgba(37,211,102,0) 68%);
+    animation:whatsapp-aura 2.2s ease-in-out infinite;
+  }
+  .floating-whatsapp::after{
+    content:"";
+    position:absolute;
+    inset:-35% auto -35% -80%;
+    width:42%;
+    transform:skewX(-22deg);
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.86), transparent);
+    opacity:0;
+  }
+  .floating-whatsapp:hover{
+    box-shadow:
+      0 22px 42px rgba(31,31,31,.2),
+      0 0 0 12px rgba(37,211,102,.18),
+      0 0 42px rgba(37,211,102,.68);
+  }
+  .floating-whatsapp:active{
+    transform:translateY(3px) scale(.82);
+  }
+  .floating-whatsapp:active::after{
+    animation:whatsapp-shine .48s ease-out;
+  }
+  .floating-whatsapp img{
+    width:68px;
+    height:68px;
+    object-fit:contain;
+    filter:drop-shadow(0 4px 0 rgba(0,0,0,.08));
+    transition:transform .16s cubic-bezier(.2,1.5,.45,1);
+  }
+  .floating-whatsapp:active img{
+    transform:rotate(-8deg) scale(.9);
+  }
+
+  @keyframes whatsapp-float{
+    0%,100%{transform:translateY(0) rotate(-2deg)}
+    50%{transform:translateY(-9px) rotate(2deg)}
+  }
+  @keyframes whatsapp-aura{
+    0%,100%{transform:scale(.92);opacity:.58}
+    50%{transform:scale(1.12);opacity:.95}
+  }
+  @keyframes whatsapp-shine{
+    0%{left:-80%;opacity:0}
+    18%{opacity:1}
+    100%{left:130%;opacity:0}
+  }
+
+  @media (min-width: 760px){
+    .wrap{width:min(100% - 56px, 1120px)}
+    .section{padding:92px 0}
+    .btn{width:max-content;min-width:240px}
+    .hero{
+      min-height:100vh;
+      align-items:center;
+      padding:46px 0 76px;
+      background-position:72% center;
+    }
+    .brand-logo{width:264px}
+    .launch-block{gap:20px}
+    .countdown{max-width:460px}
+    .count-box{min-height:76px}
+    .hero-title{font-size:clamp(48px, 5.8vw, 70px)}
+    .hero .btn{
+      width:max-content;
+      min-width:230px;
+    }
+    .benefits,.why,.final-grid{
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:52px;
+    }
+    
+    .ingredient-grid{grid-template-columns:repeat(4, 1fr)}
+    .photo-row{grid-template-columns:1fr 1fr 1fr}
+    .photo-row img{height:210px}
+    .signup{grid-template-columns:1fr 1fr}
+    .signup input[type="email"], .signup .btn, .status{grid-column:1 / -1}
+    .footer-content{grid-template-columns:1.3fr .8fr .9fr}
+  }
+
+  @media (max-width: 640px){
+    .footer-brand img{width:210px}
+    .floating-whatsapp{width:64px;height:64px;right:14px;bottom:14px}
+    .floating-whatsapp img{width:56px;height:56px}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{scroll-behavior:auto!important;transition:none!important}
+    .floating-whatsapp,
+    .floating-whatsapp::before,
+    .floating-whatsapp::after{
+      animation:none!important;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div class="launch-block">
+        <img class="brand-logo" src="logo-branca.png" alt="Caniderm">
+        <div>
+          <p class="launch-label">Lançamento em</p>
+          <div class="countdown" aria-label="Tempo para o lançamento">
+            <div class="count-box"><strong id="cd-days">00</strong><span>Dias</span></div>
+            <div class="count-box"><strong id="cd-hours">00</strong><span>Horas</span></div>
+            <div class="count-box"><strong id="cd-minutes">00</strong><span>Min</span></div>
+            <div class="count-box"><strong id="cd-seconds">00</strong><span>Seg</span></div>
+          </div>
+        </div>
+        <h1 class="hero-title" id="hero-title"><span class="protocol">O protocolo</span><span class="rest">definitivo para uma pele e pelo mais saudáveis</span></h1>
+        <a class="btn" href="#cadastro">Lista de lançamento</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" aria-labelledby="benefits-title">
+    <div class="wrap benefits">
+      <div class="image-band">
+
+        <div class="hero-banner">
+          <img src="banner-principal.jpg" alt="Banner principal">
+        </div>
+
+        <div class="slider">
+
+          <button class="slider-btn prev">&#10094;</button>
+
+          <div class="slides">
+            <div class="slide active">
+              <img src="banner-tecnico-1.jpg" alt="Banner técnico 1">
+            </div>
+            <div class="slide">
+              <img src="banner-tecnico-2.jpg" alt="Banner técnico 2">
+            </div>
+            <div class="slide">
+              <img src="banner-tecnico-3.jpg" alt="Banner técnico 3">
+            </div>
+            <div class="slide">
+              <img src="banner-tecnico-4.jpg" alt="Banner técnico 4">
+            </div>
+          </div>
+
+          <button class="slider-btn next">&#10095;</button>
+
+          <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+        </div>
+
+      </div>
+      <div>
+        <span class="eyebrow">Benefícios</span>
+        <h2 id="benefits-title" style="margin:12px 0 22px">Benefícios</h2>
+        <ul class="benefit-list">
+          <li>Cuidado além da estética</li>
+          <li>Previne dermatites</li>
+          <li>Pele e pelo saudáveis</li>
+          <li>Fórmula comprovada</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap why">
+      <div class="why-copy">
+        <span class="eyebrow">Por que Caniderm?</span>
+        <h2 id="why-title">O tratamento da pele vem antes da crise</h2>
+        <p class="lead">Caniderm é o único protocolo dermatológico do mercado que cuida da pele do seu pet de forma preventiva. O objetivo de nossa fórmula é evitar as dermatites e alergias, para você gastar menos tempo no veterinário e mais com o seu cão!</p>
+      </div>
+      <div class="why-photo" aria-label="Cachorro correndo feliz"></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <div>
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2 id="faq-title" style="margin-top:12px">Antes do lançamento.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button">Quando será o lançamento? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>O lançamento do Caniderm acontecerá em breve, e de modo online em nossa loja própria.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button">Onde vou poder adquirir? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>Você pode ter acesso antecipado ao Caniderm em nossa lista de pré-venda. Ou aguardar o lançamento de nossa loja oficial.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button">Como vou receber o aviso? <span class="plus">+</span></button>
+          <div class="faq-answer"><p>O aviso será enviado por e-mail e WhatsApp. Por isso, deixe aqui as suas informações de contato.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="cadastro" aria-labelledby="final-title">
+    <div class="wrap final-grid">
+      <div>
+        <span class="eyebrow-yellow">Lista de lançamento</span>
+        <h2 id="final-title" style="margin:12px 0 14px">Receba o aviso antes da abertura da loja oficial.</h2>
+        <p class="lead">Entre na lista para receber o lançamento online do Caniderm por e-mail e WhatsApp.</p>
+      </div>
+      <form class="signup" id="launchForm">
+        <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" required>
+        <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
+        <button class="btn" type="submit">Lista de lançamento</button>
+        <p class="status" id="formStatus">Cadastro recebido. Vamos avisar você por e-mail e WhatsApp.</p>
+      </form>
+    </div>
+    <footer class="site-footer" aria-label="Rodapé Caniderm">
+      <div class="wrap footer-content">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Caniderm">
+          <p>Protocolo dermatológico preventivo para apoiar pele saudável, pelagem bonita e bem-estar do seu cão.</p>
+        </div>
+        <div class="footer-block">
+          <strong>Contato</strong>
+          <a href="https://wa.me/5512991605488">WhatsApp: (12) 99160-5488</a>
+          <span>Aviso por e-mail e WhatsApp</span>
+          <span>Lançamento online em breve</span>
+        </div>
+        <div class="footer-block">
+          <strong>Caniderm</strong>
+          <a href="#cadastro">Lista de lançamento</a>
+          <span>Pré-venda antecipada</span>
+          <span>Loja oficial em breve</span>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <p>&copy; 2026 Caniderm. Todos os direitos reservados.</p>
+        <p>Suplemento alimentar coadjuvante. Não substitui avaliação veterinária.</p>
+      </div>
+    </footer>
+  </section>
+</main>
+
+<a class="floating-whatsapp" href="https://wa.me/5512991605488" aria-label="Chamar Caniderm no WhatsApp">
+  <img src="icon-whatsapp.png" alt="">
+</a>
+
+<script>
+  (function(){
+    var target = Date.now() + (20 * 24 * 60 * 60 * 1000);
+    var ids = {
+      days: document.getElementById("cd-days"),
+      hours: document.getElementById("cd-hours"),
+      minutes: document.getElementById("cd-minutes"),
+      seconds: document.getElementById("cd-seconds")
+    };
+
+    function pad(value){ return String(value).padStart(2, "0"); }
+
+    function tick(){
+      var diff = Math.max(target - Date.now(), 0);
+      ids.days.textContent = pad(Math.floor(diff / 86400000));
+      ids.hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      ids.minutes.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      ids.seconds.textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  var GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjdLZRuapxeBPFgzexGR8W8I3L80fyWaAcHzcWfOHpcibYUjzyw8pBa3OOCFmTP0uu/exec";
+
+  document.getElementById("launchForm").addEventListener("submit", async function(event){
+    event.preventDefault();
+    var form = this;
+    var button = form.querySelector("button");
+    var status = document.getElementById("formStatus");
+    var originalButtonText = button.dataset.originalText || button.textContent;
+
+    button.dataset.originalText = originalButtonText;
+    status.classList.remove("error");
+
+    button.disabled = true;
+    button.textContent = "Enviando...";
+    status.style.display = "none";
+
+    try{
+      var formData = new FormData(form);
+      formData.append("origem", "Caniderm landing page");
+      formData.append("pagina", window.location.href);
+      formData.append("data_envio", new Date().toISOString());
+
+      await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      });
+
+      status.textContent = "Cadastro enviado. Vamos avisar voce por e-mail e WhatsApp.";
+      status.style.display = "block";
+      button.textContent = "Cadastro confirmado";
+      form.reset();
+    }catch(error){
+      status.textContent = "Nao foi possivel enviar agora. Tente novamente em alguns instantes.";
+      status.classList.add("error");
+      status.style.display = "block";
+      button.textContent = originalButtonText;
+      console.error(error);
+    }finally{
+      button.disabled = false;
+    }
+  });
+
+  
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+let current=0;
+function showSlide(i){
+slides.forEach(s=>s.classList.remove('active'));
+dots.forEach(d=>d.classList.remove('active'));
+slides[i].classList.add('active');
+dots[i].classList.add('active');
+current=i;
+}
+const prev=document.querySelector('.prev');
+const next=document.querySelector('.next');
+if(prev&&next){
+prev.onclick=()=>showSlide((current-1+slides.length)%slides.length);
+next.onclick=()=>showSlide((current+1)%slides.length);
+}
+
+document.querySelectorAll(".faq-item").forEach(function(item){
+    var button = item.querySelector("button");
+    var answer = item.querySelector(".faq-answer");
+    button.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+let current=0;
+function showSlide(i){
+slides.forEach(s=>s.classList.remove('active'));
+dots.forEach(d=>d.classList.remove('active'));
+slides[i].classList.add('active');
+dots[i].classList.add('active');
+current=i;
+}
+const prev=document.querySelector('.prev');
+const next=document.querySelector('.next');
+if(prev&&next){
+prev.onclick=()=>showSlide((current-1+slides.length)%slides.length);
+next.onclick=()=>showSlide((current+1)%slides.length);
+}
+
+document.querySelectorAll(".faq-item").forEach(function(other){
+        other.classList.remove("open");
+        other.querySelector(".faq-answer").style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add("open");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+</body>
+</html>
