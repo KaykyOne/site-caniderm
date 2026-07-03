@@ -1,5 +1,3 @@
-const SPREADSHEET_ID = "1JF8mjbEqrmt2xpO39yxppvMJLp6mBDqAxQDQNU9rX1w";
-
 function doGet(e) {
   if (e && e.parameter && e.parameter.teste === "1") {
     return saveLead({
@@ -70,14 +68,10 @@ function saveLead(data) {
 }
 
 function getSpreadsheet() {
-  if (SPREADSHEET_ID) {
-    return SpreadsheetApp.openById(SPREADSHEET_ID);
-  }
-
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
 
   if (!spreadsheet) {
-    throw new Error("Nenhuma planilha ativa. Abra a planilha, use Extensoes > Apps Script, ou preencha SPREADSHEET_ID.");
+    throw new Error("Nenhuma planilha ativa. Abra a planilha e acesse Extensoes > Apps Script.");
   }
 
   return spreadsheet;
