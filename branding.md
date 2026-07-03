@@ -17,6 +17,16 @@ O design deve priorizar amplo espaço em branco, formas orgânicas e arredondada
 
 numero a ser usado para os links para o whatsapp: +55 12 99160-5488
 
+Tamanhos de imagem usados atualmente no site:
+
+- Logo principal do hero: ideal em 264x264 px no desktop e aproximadamente 170x170 px no mobile. Deve manter boa leitura em fundo escuro.
+- Logo do rodape: ideal em 150x150 px, podendo ser maior desde que preserve proporcao quadrada.
+- Icone flutuante do WhatsApp: ideal em 64x64 px a 78x78 px, com fundo transparente.
+- Imagem principal da faixa de beneficios: primeira imagem em 1000x1000 px ou maior, exibida em 330x330 px no desktop e 260x260 px no mobile.
+- Segunda e terceira imagens da faixa de beneficios: ideal em 800x800 px ou maior, exibidas em cerca de 220x220 px no desktop e 180x180 px no mobile.
+- Foto da secao "Por que Caniderm?": ideal em 1200x900 px ou maior, com area de corte central segura para uso em banner.
+- Imagens enviadas por link para qualquer bloco: manter proporcao 1:1 para cards e 4:3 para fotos horizontais, evitando cortes importantes nas bordas.
+
 informações para colocar no site: 
 Quando será o lançamento 
 "O lançamento do Caniderm acontecerá em breve, e de modo online em nossa loja própria"

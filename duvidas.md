@@ -26,6 +26,18 @@ Nao existe backend proprio. O site e apenas HTML, CSS e JavaScript. O armazename
 - `logo.png`, `logo-branca.png`, `hero-dog.jpg`, `icon-whatsapp.png`: imagens usadas no site.
 - `branding.md` e `brandbook.html`: materiais de marca/apoio.
 
+## Tamanhos das imagens no site
+
+O site atual usa estas imagens e tamanhos aproximados por area:
+
+- Hero principal: usa `logo.png` no topo e `hero-dog.jpg` no fundo. O logo fica bem com cerca de 264x264 px no desktop e 170x170 px no mobile. O fundo do hero deve ter pelo menos 1600x1200 px para manter qualidade em telas grandes.
+- Rodape: usa `logo.png` com cerca de 150x150 px.
+- WhatsApp flutuante: usa `icon-whatsapp.png` com cerca de 64x64 px no mobile e 78x78 px no desktop.
+- Secao de beneficios: a primeira imagem aparece maior, em torno de 330x330 px no desktop e 260x260 px no mobile. As outras duas aparecem em torno de 220x220 px no desktop e 180x180 px no mobile.
+- Secao "Por que Caniderm?": a foto lateral ocupa um bloco de banner e funciona melhor com imagens horizontais de pelo menos 1200x900 px.
+
+Se alguma imagem vier por link externo, manter a mesma proporcao visual do bloco onde ela sera usada.
+
 ## Como o formulario funciona
 
 O formulario fica perto do final da pagina, na secao `#cadastro`.
