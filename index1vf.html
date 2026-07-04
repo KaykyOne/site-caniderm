@@ -252,7 +252,7 @@
 
     display:grid;
 
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:minmax(0,2fr) minmax(320px,1fr);
 
     gap:48px;
 
@@ -264,13 +264,15 @@
 
     width:100%;
 
+    min-width:0;
+
     display:flex;
+
     flex-direction:column;
 
     gap:20px;
 
 }
-
 .hero-banner{
 
     width:100%;
@@ -302,20 +304,13 @@ SLIDER
 
 .slider{
 
-    position:relative;
-
     width:100%;
 
-    height:clamp(320px,42vw,700px);
+    max-width:100%;
 
     overflow:hidden;
 
-    border-radius:var(--radius);
-
-    box-shadow:var(--shadow);
-
 }
-
 .slides{
 
     display:flex;
@@ -337,14 +332,14 @@ SLIDER
 .slide img{
 
     width:100%;
-    height:100%;
 
-    display:block;
+    height:100%;
 
     object-fit:cover;
 
-}
+    display:block;
 
+}
 
 /*==========================
 SETAS
@@ -855,7 +850,7 @@ RESPONSIVO
 
         grid-template-columns:1fr;
 
-        gap:30px;
+        gap:32px;
 
     }
 
@@ -886,8 +881,6 @@ RESPONSIVO
   <section class="section white" aria-labelledby="benefits-title">
     <div class="wrap benefits">
       <div class="image-band">
-
-        <div class="image-band">
 
     <div class="hero-banner">
 
