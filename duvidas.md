@@ -20,6 +20,7 @@ Nao existe backend proprio. O site e apenas HTML, CSS e JavaScript. O armazename
 - `index.html`: pagina principal usada em producao.
 - `index1.html`: variante do site com funcionamento de formulario igual ao `index.html`.
 - `index2.html`: outra versao antiga/alternativa do site.
+- `site-config.js`: arquivo central com a URL do Google Apps Script usada pelos formularios.
 - `google-apps-script.js`: codigo que deve ser colado no Google Apps Script.
 - `.github/workflows/pages.yml`: workflow para publicar no GitHub Pages via GitHub Actions.
 - `.nojekyll`: evita processamento Jekyll no GitHub Pages.
@@ -48,10 +49,12 @@ Campos coletados:
 - `whatsapp`
 - `email`
 
-No JavaScript do `index.html` e do `index1.html`, existe esta variavel:
+No arquivo `site-config.js`, existe esta configuracao:
 
 ```js
-var GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjdLZRuapxeBPFgzexGR8W8I3L80fyWaAcHzcWfOHpcibYUjzyw8pBa3OOCFmTP0uu/exec";
+window.CANIDERM_CONFIG = {
+  googleSheetsWebAppUrl: "https://script.google.com/macros/s/AKfycbwjdLZRuapxeBPFgzexGR8W8I3L80fyWaAcHzcWfOHpcibYUjzyw8pBa3OOCFmTP0uu/exec"
+};
 ```
 
 Quando o usuario envia o formulario, o site cria um `FormData` e manda um `POST` para essa URL do Google Apps Script:
@@ -265,6 +268,7 @@ Estou trabalhando em uma landing page estatica chamada Caniderm.
 Arquivos principais:
 - index.html: pagina principal de producao.
 - index1.html: variante que deve manter o mesmo funcionamento do formulario.
+- site-config.js: arquivo central com a URL do Google Apps Script.
 - google-apps-script.js: codigo do Google Apps Script que recebe os cadastros e grava no Google Sheets.
 - .github/workflows/pages.yml: workflow de deploy para GitHub Pages.
 - .nojekyll: arquivo para evitar processamento Jekyll no GitHub Pages.

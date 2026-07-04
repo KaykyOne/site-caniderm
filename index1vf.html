@@ -1011,6 +1011,7 @@ RESPONSIVO
   <img src="icon-whatsapp.png" alt="">
 </a>
 
+<script src="site-config.js"></script>
 <script>
   (function(){
     var target = Date.now() + (20 * 24 * 60 * 60 * 1000);
@@ -1034,8 +1035,6 @@ RESPONSIVO
     tick();
     setInterval(tick, 1000);
   })();
-
-  var GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjdLZRuapxeBPFgzexGR8W8I3L80fyWaAcHzcWfOHpcibYUjzyw8pBa3OOCFmTP0uu/exec";
 
   document.getElementById("launchForm").addEventListener("submit", async function(event){
     event.preventDefault();

@@ -772,6 +772,7 @@
   <img src="icon-whatsapp.png" alt="">
 </a>
 
+<script src="site-config.js"></script>
 <script>
   (function(){
     var target = Date.now() + (20 * 24 * 60 * 60 * 1000);
@@ -796,8 +797,6 @@
     setInterval(tick, 1000);
   })();
 
-  var GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjdLZRuapxeBPFgzexGR8W8I3L80fyWaAcHzcWfOHpcibYUjzyw8pBa3OOCFmTP0uu/exec";
-
   document.getElementById("launchForm").addEventListener("submit", async function(event){
     event.preventDefault();
     var form = this;
@@ -807,13 +806,6 @@
 
     button.dataset.originalText = originalButtonText;
     status.classList.remove("error");
-
-    // if(!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL.indexOf("https://script.google.com/macros/s/AKfycbwjdLZRuapxeBPFgzexGR8W8I3L80fyWaAcHzcWfOHpcibYUjzyw8pBa3OOCFmTP0uu/exec") !== -1){
-    //   status.textContent = "Configure a URL do Google Apps Script antes de publicar o formulario.";
-    //   status.classList.add("error");
-    //   status.style.display = "block";
-    //   return;
-    // }
 
     button.disabled = true;
     button.textContent = "Enviando...";
