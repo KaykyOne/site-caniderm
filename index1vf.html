@@ -249,30 +249,21 @@
   }
 
   .benefits{
-
     display:grid;
-
-    grid-template-columns:minmax(0,2fr) minmax(320px,1fr);
-
-    gap:48px;
-
-    align-items:start;
-
-}
+    gap:24px;
+  }
   
 .image-band{
 
     width:100%;
 
-    min-width:0;
-
     display:flex;
-
     flex-direction:column;
 
     gap:20px;
 
 }
+
 .hero-banner{
 
     width:100%;
@@ -304,13 +295,20 @@ SLIDER
 
 .slider{
 
+    position:relative;
+
     width:100%;
 
-    max-width:100%;
+    height:clamp(320px,42vw,700px);
 
     overflow:hidden;
 
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
 }
+
 .slides{
 
     display:flex;
@@ -332,14 +330,14 @@ SLIDER
 .slide img{
 
     width:100%;
-
     height:100%;
-
-    object-fit:cover;
 
     display:block;
 
+    object-fit:cover;
+
 }
+
 
 /*==========================
 SETAS
@@ -811,16 +809,11 @@ RESPONSIVO
       width:max-content;
       min-width:230px;
     }
-    .why,
-.final-grid{
-
-    grid-template-columns:1fr 1fr;
-
-    align-items:center;
-
-    gap:52px;
-
-}
+    .benefits,.why,.final-grid{
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:52px;
+    }
     
     .ingredient-grid{grid-template-columns:repeat(4, 1fr)}
     .photo-row{grid-template-columns:1fr 1fr 1fr}
@@ -844,17 +837,6 @@ RESPONSIVO
       animation:none!important;
     }
   }
-  @media (max-width:760px){
-
-    .benefits{
-
-        grid-template-columns:1fr;
-
-        gap:32px;
-
-    }
-
-}
 </style>
 </head>
 <body>
@@ -881,6 +863,8 @@ RESPONSIVO
   <section class="section white" aria-labelledby="benefits-title">
     <div class="wrap benefits">
       <div class="image-band">
+
+        <div class="image-band">
 
     <div class="hero-banner">
 
@@ -1027,7 +1011,6 @@ RESPONSIVO
   <img src="icon-whatsapp.png" alt="">
 </a>
 
-<script src="site-config.js"></script>
 <script>
   (function(){
     var target = Date.now() + (20 * 24 * 60 * 60 * 1000);
@@ -1051,6 +1034,8 @@ RESPONSIVO
     tick();
     setInterval(tick, 1000);
   })();
+
+  var GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjdLZRuapxeBPFgzexGR8W8I3L80fyWaAcHzcWfOHpcibYUjzyw8pBa3OOCFmTP0uu/exec";
 
   document.getElementById("launchForm").addEventListener("submit", async function(event){
     event.preventDefault();
