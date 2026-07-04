@@ -249,9 +249,16 @@
   }
 
   .benefits{
+
     display:grid;
-    gap:24px;
-  }
+
+    grid-template-columns:2fr 1fr;
+
+    gap:48px;
+
+    align-items:start;
+
+}
   
 .image-band{
 
@@ -809,11 +816,16 @@ RESPONSIVO
       width:max-content;
       min-width:230px;
     }
-    .benefits,.why,.final-grid{
-      grid-template-columns:1fr 1fr;
-      align-items:center;
-      gap:52px;
-    }
+    .why,
+.final-grid{
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:52px;
+
+}
     
     .ingredient-grid{grid-template-columns:repeat(4, 1fr)}
     .photo-row{grid-template-columns:1fr 1fr 1fr}
@@ -837,6 +849,17 @@ RESPONSIVO
       animation:none!important;
     }
   }
+  @media (max-width:760px){
+
+    .benefits{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+}
 </style>
 </head>
 <body>
