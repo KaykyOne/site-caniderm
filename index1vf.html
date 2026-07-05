@@ -251,6 +251,23 @@
   .benefits{
     display:grid;
     gap:24px;
+    position:relative;
+  }
+  .benefits-glow{
+    position:absolute;
+    z-index:0;
+    top:-24px;
+    bottom:-24px;
+    left:-18px;
+    right:-18px;
+    background:rgba(242,174,30,.22);
+    border-radius:28px;
+    pointer-events:none;
+  }
+  .benefits > .image-band,
+  .benefits > .benefits-copy{
+    position:relative;
+    z-index:1;
   }
   
 .image-band{
@@ -814,6 +831,13 @@ RESPONSIVO
       align-items:center;
       gap:52px;
     }
+    .benefits-glow{
+      top:-40px;
+      bottom:-40px;
+      left:-36px;
+      right:-36px;
+      border-radius:36px;
+    }
     
     .ingredient-grid{grid-template-columns:repeat(4, 1fr)}
     .photo-row{grid-template-columns:1fr 1fr 1fr}
@@ -862,6 +886,7 @@ RESPONSIVO
 
   <section class="section white" aria-labelledby="benefits-title">
     <div class="wrap benefits">
+      <div class="benefits-glow" aria-hidden="true"></div>
       <div class="image-band">
 
     <div class="hero-banner">
@@ -916,7 +941,7 @@ RESPONSIVO
     </div>
 
 </div>
-      <div>
+      <div class="benefits-copy">
         <span class="eyebrow">Benefícios</span>
         <h2 id="benefits-title" style="margin:12px 0 22px">Benefícios</h2>
         <ul class="benefit-list">
