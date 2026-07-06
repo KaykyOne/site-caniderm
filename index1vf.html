@@ -901,25 +901,25 @@ RESPONSIVO
 
             <div class="slide">
 
-                <img src="banner1.svg">
+                <img src="banner1.jpg">
 
             </div>
 
             <div class="slide">
 
-                <img src="banner2.svg">
+                <img src="banner2.jpg">
 
             </div>
 
             <div class="slide">
 
-                <img src="banner3.svg">
+                <img src="banner3.jpg">
 
             </div>
 
             <div class="slide">
 
-                <img src="banner4.svg">
+                <img src="banner4.jpg">
 
             </div>
 
@@ -1102,15 +1102,15 @@ RESPONSIVO
   });
 
   
+const slidesContainer=document.querySelector('.slides');
 const slides=document.querySelectorAll('.slide');
 const dots=document.querySelectorAll('.dot');
 let current=0;
 function showSlide(i){
-slides.forEach(s=>s.classList.remove('active'));
 dots.forEach(d=>d.classList.remove('active'));
-slides[i].classList.add('active');
 dots[i].classList.add('active');
 current=i;
+slidesContainer.style.transform = `translateX(-${i*100}%)`;
 }
 const prev=document.querySelector('.prev');
 const next=document.querySelector('.next');
@@ -1124,23 +1124,6 @@ document.querySelectorAll(".faq-item").forEach(function(item){
     var answer = item.querySelector(".faq-answer");
     button.addEventListener("click", function(){
       var isOpen = item.classList.contains("open");
-      
-const slides=document.querySelectorAll('.slide');
-const dots=document.querySelectorAll('.dot');
-let current=0;
-function showSlide(i){
-slides.forEach(s=>s.classList.remove('active'));
-dots.forEach(d=>d.classList.remove('active'));
-slides[i].classList.add('active');
-dots[i].classList.add('active');
-current=i;
-}
-const prev=document.querySelector('.prev');
-const next=document.querySelector('.next');
-if(prev&&next){
-prev.onclick=()=>showSlide((current-1+slides.length)%slides.length);
-next.onclick=()=>showSlide((current+1)%slides.length);
-}
 
 document.querySelectorAll(".faq-item").forEach(function(other){
         other.classList.remove("open");
